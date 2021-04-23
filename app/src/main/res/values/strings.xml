@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">4Flicks app</string>
+    <string name="msgWel">Welcome to Meal Planner</string>
+    <string name="br">Breakfast</string>
+    <string name="lu">Lunch</string>
+    <string name="di">Dinner</string>
+    <string name="enBr">Enter Breakfast</string>
+    <string name="enLu">Enter Lunch</string>
+    <string name="Endi">Enter Dinner</string>
+    <string name="addpl">Add Plan</string>
+    <string name="viPlan">View Plans</string>
+    <string name="msg1">Plan Your Meals Today</string>
+    <string name="plnToday">Plan Today</string>
+    <string name="btnCreate">Create Plan</string>
+    <string name="btnView">View Plan</string>
+    <string name="calIn">Calorie Intake :</string>
+    <string name="day1">Day 1</string>
+    <string name="btnEditPl">Update Plan</string>
+    <string name="btnDelPl">Delete Plan</string>
+    <string name="Tvday2">Day 2</string>
+    <string name="btnFindbmi">Find Your BMI</string>
+    <string name="btnCheckRec">Check your own recipes</string>
+    <string name="btnPlanMeal">Plan Your Meals</string>
+    <string name="btnChkGro">Check your grocery list</string>
+    <string name="TvWelBestPlan">Welcome To BestPlan</string>
+    <string name="valTapEd">Tap to edit</string>
+</resources>
