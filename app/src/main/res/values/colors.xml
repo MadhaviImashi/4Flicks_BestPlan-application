@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="homeNavBtn">#FF9C0A</color>
+    <color name="toolBarBg">#FF9C0A</color>
+    <color name="taskTimeBg">#FFE7C3</color>
+    <color name="taskDescriptionBg">#FFF8E5</color>
+    <color name="adEditBtnColor">#FD8761</color>
 </resources>
