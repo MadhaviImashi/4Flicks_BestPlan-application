@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
-        <activity android:name=".CreateRecipe"></activity>
         <activity android:name=".bmiCalculator" />
         <activity android:name=".MainActivity">
             <intent-filter>
