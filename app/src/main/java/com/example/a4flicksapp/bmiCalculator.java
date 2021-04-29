@@ -2,20 +2,27 @@ package com.example.a4flicksapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class bmiCalculator extends AppCompatActivity {
+
+    Button btnFragmentMainNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi_calculator);
 
+        btnFragmentMainNav = findViewById(R.id.btnFragmentMainNav);
+
+        //----------------------------------------
         //radioGroup = findViewById(R.id.radioGroup);
         //Button buttonApply = findViewById(R.id.button_apply);
 
@@ -32,5 +39,11 @@ public class bmiCalculator extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
         toast.setView(layout);//setting the view of custom toast layout
         toast.show();
+    }
+
+    public void displayFragmentsMain(View view){
+
+        Intent intent = new Intent(this, FragmentedTips.class);
+        startActivity(intent);
     }
 }

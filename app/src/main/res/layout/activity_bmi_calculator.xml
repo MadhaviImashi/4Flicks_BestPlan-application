@@ -234,13 +234,14 @@
         app:srcCompat="@drawable/screenshot_2" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnFragmentMainNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="33dp"
+        android:onClick="displayFragmentsMain"
         android:text="@string/btnDailyFitnessPlan"
         android:textColor="#F14747"
         app:backgroundTint="#FFFFFF" />
