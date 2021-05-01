@@ -82,7 +82,7 @@ public class bmiCalculator extends AppCompatActivity {
 
         //calculate BMI value for according to the user input data
         double BMI = weight / hInMeters;
-        String BMIval = String.format("%.2f", BMI);
+        String BMIval = String.format("%.2f", BMI); //round of the BMI value to 2 decimal places
         double BMIvalue = Double.valueOf(BMIval);
 
         //classify the weight category according to the BMI range
