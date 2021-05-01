@@ -3,6 +3,7 @@ package com.example.a4flicksapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.icu.number.Precision;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -81,6 +82,8 @@ public class bmiCalculator extends AppCompatActivity {
 
         //calculate BMI value for according to the user input data
         double BMI = weight / hInMeters;
+        String BMIval = String.format("%.2f", BMI);
+        double BMIvalue = Double.valueOf(BMIval);
 
         //classify the weight category according to the BMI range
         if(BMI < 18.5){
@@ -96,7 +99,7 @@ public class bmiCalculator extends AppCompatActivity {
             category = "Morbidly obese";
 
         //display the weight category of the user
-        BMIresult.setText("You are in " + category);
+        BMIresult.setText( "  Your BMI: "+ BMIvalue + "\n\n" + category);
 
     }
 
