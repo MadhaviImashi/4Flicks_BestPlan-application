@@ -41,4 +41,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/all_recipes_home" />
 
+    <ImageButton
+        android:id="@+id/addRecipeBtn"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/add_icon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
