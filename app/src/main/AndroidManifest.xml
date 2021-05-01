@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
         <activity android:name=".recipe">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".update_recipe"></activity>
         <activity android:name=".create_recipe"></activity>
@@ -17,11 +22,6 @@
         <activity android:name=".all_recipes_without_any_recipes" />
         <activity android:name=".bmiCalculator" />
         <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
