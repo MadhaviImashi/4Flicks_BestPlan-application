@@ -15,4 +15,10 @@ public class GroceryListHome extends AppCompatActivity {
         setContentView(R.layout.activity_grocery_list_home);
     }
 
+    //create onclick method to navigate to home page
+    public void displayAppHome(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

@@ -27,5 +27,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    //create onclick method to link grocery list button
+    public void goToGroceryListHome(View view) {
+        Intent intent = new Intent(this, GroceryListHome.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "Welcome To Best Plan Grocery List", Toast.LENGTH_SHORT).show();
+    }
 }
