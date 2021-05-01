@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
+        <activity android:name=".GroceryListItemList"></activity>
         <activity android:name=".GroceryListAddItem" />
         <activity android:name=".GroceryListHome" />
         <activity android:name=".bmiCalculator" />
