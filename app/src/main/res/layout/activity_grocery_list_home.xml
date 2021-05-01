@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroceryListHome">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbgrocery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9C0A"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/grocery_list_title1"
+        app:titleMarginStart="60dp"
+        app:titleTextColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/homeButton"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tbgrocery"
+        app:layout_constraintStart_toStartOf="@+id/tbgrocery"
+        app:layout_constraintTop_toTopOf="@+id/tbgrocery"
+        app:srcCompat="@drawable/ic_baseline_home_24" />
+
+    <TextView
+        android:id="@+id/groceryListText1"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/grocery_list_text1"
+        android:textAlignment="center"
+        android:textColor="#FD2626"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbgrocery" />
+
+    <ImageView
+        android:id="@+id/groceryListHomeImage"
+        android:layout_width="326dp"
+        android:layout_height="331dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryListText1"
+        app:srcCompat="@drawable/grocerybag" />
+
+    <TextView
+        android:id="@+id/groceryListText2"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:text="@string/grocery_list_text2"
+        android:textAlignment="center"
+        android:textColor="#F6558C"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryListHomeImage" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnnextpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        app:backgroundTint="#FF7F00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryListText2"
+        app:srcCompat="@drawable/nexticon"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
