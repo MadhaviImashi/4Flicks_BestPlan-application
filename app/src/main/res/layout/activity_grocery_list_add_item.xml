@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroceryListAddItem">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbAddGrocery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9C0A"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/grocery_list_title2"
+        app:titleMarginStart="60dp"
+        app:titleTextColor="@color/white" />
+
+    <ImageButton
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9C0A"
+        android:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tbAddGrocery"
+        app:layout_constraintStart_toStartOf="@+id/tbAddGrocery"
+        app:layout_constraintTop_toTopOf="@+id/tbAddGrocery"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <ImageView
+        android:id="@+id/groceryAddImage"
+        android:layout_width="180dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbAddGrocery"
+        app:srcCompat="@drawable/grocerylistadditem" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputQuantity"
+        android:layout_width="209dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/grocery_add_hint3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/groceryQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groceryQuantity" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputPrice"
+        android:layout_width="209dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/grocery_add_hint2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/groceryPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groceryPrice" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputItemName"
+        android:layout_width="209dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/grocery_add_hint1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/groceryItemName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groceryItemName" />
+
+    <TextView
+        android:id="@+id/groceryItemName"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/grocery_add_name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textInputItemName"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryAddImage" />
+
+    <TextView
+        android:id="@+id/groceryPrice"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/grocery_add_price"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textInputPrice"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryItemName" />
+
+    <TextView
+        android:id="@+id/groceryQuantity"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/grocery_add_quantity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textInputQuantity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryPrice" />
+
+    <Button
+        android:id="@+id/groceryAddBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#FF7F00"
+        android:text="@string/grocery_add_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputQuantity" />
+
+    <ImageView
+        android:id="@+id/addItemImage"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceryAddImage"
+        app:srcCompat="@drawable/carrot" />
+
+    <ImageView
+        android:id="@+id/addPriceImage"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addItemImage"
+        app:srcCompat="@drawable/price_tag" />
+
+    <ImageView
+        android:id="@+id/addquantityImage"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addPriceImage"
+        app:srcCompat="@drawable/measuring" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
