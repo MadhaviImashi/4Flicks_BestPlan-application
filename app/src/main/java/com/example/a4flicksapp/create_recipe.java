@@ -22,11 +22,11 @@ public class create_recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        RecipeName = findViewById(R.id.recipeName);
-        RecipeIngredients = findViewById(R.id.recipeIngredients);
-        RecipeDirections = findViewById(R.id.directions);
+        RecipeName = findViewById(R.id.editRecipeName);
+        RecipeIngredients = findViewById(R.id.editRecipeIngredients);
+        RecipeDirections = findViewById(R.id.editDirections);
         AddRecipeImageBtn = findViewById(R.id.imageButton);
-        RecipeImage = findViewById(R.id.recipeInputImage);
+        RecipeImage = findViewById(R.id.editRecipeInputImage);
         SubmitRecipe = findViewById(R.id.recipeSubmit);
     }
 }
