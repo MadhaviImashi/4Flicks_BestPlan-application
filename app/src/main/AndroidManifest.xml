@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
+        <activity android:name=".AddNewTask"></activity>
+        <activity android:name=".FragmentedTips" />
+        <activity android:name=".bmiCalculator" />
         <activity android:name=".single_recipe_card"></activity>
         <activity android:name=".recipe"></activity>
         <activity android:name=".update_recipe" />
         <activity android:name=".create_recipe" />
         <activity android:name=".all_recipes_with_recipes" />
         <activity android:name=".all_recipes_without_any_recipes" />
-        <activity android:name=".bmiCalculator" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
