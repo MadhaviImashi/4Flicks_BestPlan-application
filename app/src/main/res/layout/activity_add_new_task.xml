@@ -21,7 +21,7 @@
         tools:layout_editor_absoluteY="-2dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSelectTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -39,35 +39,34 @@
 
     <TextView
         android:id="@+id/tvTime"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:layout_marginBottom="376dp"
+        android:layout_width="102dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="352dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSelectTime" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="69dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="77dp"
         android:text="@string/taskView"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddTask"
+        app:layout_constraintEnd_toStartOf="@+id/editTextDescription"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSelectTime" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -77,13 +76,14 @@
         android:ems="10"
         android:hint="@string/taskHint"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddTask"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnAddTask"
         android:layout_width="254dp"
         android:layout_height="41dp"
         android:layout_marginStart="149dp"

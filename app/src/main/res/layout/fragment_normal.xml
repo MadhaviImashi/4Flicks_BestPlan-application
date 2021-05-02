@@ -8,29 +8,14 @@
     android:background="#ECFAFF"
     tools:context=".normalFragment">
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginEnd="135dp"
-        android:text="@string/btnPlan"
-        app:backgroundTint="#67D3E1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.997" />
-
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="411dp"
+        android:layout_width="410dp"
         android:layout_height="294dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/normaltips"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="385dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

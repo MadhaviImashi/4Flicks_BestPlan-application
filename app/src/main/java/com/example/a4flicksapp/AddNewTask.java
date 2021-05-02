@@ -6,6 +6,8 @@ import androidx.fragment.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -14,10 +16,16 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
 
     String msg;
 
+    private Button btnAddTask;
+    private EditText  inputDesc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_task);
+
+        btnAddTask = findViewById(R.id.btnAddTask);
+        inputDesc = findViewById(R.id.editTextDescription);
     }
 
     public void showTimePickerDialog(View v) {
