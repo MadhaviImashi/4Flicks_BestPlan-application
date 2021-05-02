@@ -45,7 +45,7 @@
         android:id="@+id/addRecipeBtn"
         android:layout_width="76dp"
         android:layout_height="76dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="40dp"
         android:onClick="displayAllRecipesWithRecipes"
         app:layout_constraintBottom_toBottomOf="parent"
