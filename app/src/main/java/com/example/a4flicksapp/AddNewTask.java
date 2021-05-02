@@ -18,6 +18,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
 
     private Button btnAddTask;
     private EditText  inputDesc;
+    private TextView displayTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +36,8 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        TextView time = (TextView) findViewById(R.id.tvTime);
-        time.setText("Hour: " + hourOfDay + " Minute: " + minute);
+        displayTime = (TextView) findViewById(R.id.tvTime);
+        displayTime.setText("Hour: " + hourOfDay + " Minute: " + minute);
 
         msg = "You have set the time as : " + hourOfDay + ":" + minute + "to complete the Task";
         Toast.makeText(this, "Hello "+ msg, Toast.LENGTH_LONG).show();

@@ -9,15 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
-        <activity android:name=".ToDoList">
-
-        </activity>
-        <activity android:name=".AddNewTask">
-
-        </activity>
-        <activity android:name=".FragmentedTips">
-
-        </activity>
+        <activity android:name=".UpdateTask"></activity>
+        <activity android:name=".ToDoList"></activity>
+        <activity android:name=".AddNewTask"></activity>
+        <activity android:name=".FragmentedTips"></activity>
         <activity android:name=".bmiCalculator" />
         <activity android:name=".MainActivity">
             <intent-filter>
