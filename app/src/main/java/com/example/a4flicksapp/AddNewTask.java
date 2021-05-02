@@ -38,7 +38,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
         TextView time = (TextView) findViewById(R.id.tvTime);
         time.setText("Hour: " + hourOfDay + " Minute: " + minute);
 
-        msg = "You have set the time as: " + hourOfDay + ":" + minute + "to complete the Task";
+        msg = "You have set the time as : " + hourOfDay + ":" + minute + "to complete the Task";
         Toast.makeText(this, "Hello "+ msg, Toast.LENGTH_LONG).show();
     }
 
