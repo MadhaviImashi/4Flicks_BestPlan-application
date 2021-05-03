@@ -69,4 +69,7 @@
     <string name="grocery_list_txt_tot_amount">Total Amount =</string>
     <string name="grocery_list_quantity_text">Quantity =</string>
     <string name="grocery_list_item_price_text">Unit Price (Rs.)</string>
+    <string name="grocery_update_btn">UPDATE</string>
+    <string name="grocery_delete_btn">DELETE</string>
+    <string name="grocery_list_title4">Grocery Item</string>
 </resources>
