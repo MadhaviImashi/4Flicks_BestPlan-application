@@ -59,4 +59,10 @@
     <string name="hintEnBr">Enter Breakfast</string>
     <string name="hintEnLu">Enter Lunch</string>
     <string name="hintEnDin">Enter Dinner</string>
+    <string name="TvUpDte">Update Day</string>
+    <string name="TvUpBr">Update Breakfast</string>
+    <string name="TvUpLu">Update Lunch</string>
+    <string name="TvUpDin">Update Dinner</string>
+    <string name="btnUpMealP">Update Meal Plan</string>
+    <string name="TvUpMlPl">Update Meal Plan</string>
 </resources>
