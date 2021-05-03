@@ -1,6 +1,6 @@
 package com.example.a4flicksapp;
 
-public class DailyTask {
+public class DailyTaskModel {
     //this class is used for both keeping data when that it is to be inserted to DB and to store the retrieved data temporarily as well
     // (simply a model class which keeps data in an intermidiate class)
     private int id;
@@ -8,9 +8,9 @@ public class DailyTask {
     private long started, finished;
 
     //set values to the above variables using constructor or getters, setters
-    public DailyTask() {}
+    public DailyTaskModel() {}
 
-    public DailyTask(int id, String time, String description, long started, long finished) {
+    public DailyTaskModel(int id, String time, String description, long started, long finished) {
         this.id = id;
         this.time = time;
         this.description = description;
@@ -18,7 +18,7 @@ public class DailyTask {
         this.finished = finished;
     }
 
-    public DailyTask(String time, String description, long started, long finished) {
+    public DailyTaskModel(String time, String description, long started, long finished) {
         this.time = time;
         this.description = description;
         this.started = started;
@@ -26,6 +26,7 @@ public class DailyTask {
     }
 
     //getters and setters
+    //getters will be useful when displaying user input data(in DB) on the UpdateTAsk activity
     public int getId() {
         return id;
     }
