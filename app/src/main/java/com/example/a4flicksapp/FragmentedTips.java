@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class FragmentedTips extends AppCompatActivity {
 
     Button btnNavDailyPlan, btnUnderW, btnNormal, btnOverW; //create button objects for fragment buttons
     Fragment frgUnderW, frgNormal, frgOverW; //fragment objects
+    ImageButton btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class FragmentedTips extends AppCompatActivity {
         btnNormal = findViewById(R.id.btnNormal);
         btnOverW = findViewById(R.id.btnOverW);
         btnNavDailyPlan = findViewById(R.id.btnNavTasksList);
+        btnHome = findViewById(R.id.FhomeButton);
 
         //instantiate objects for each fragment.java class
         frgUnderW = new underweightFragment();
@@ -33,6 +36,13 @@ public class FragmentedTips extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayTasksList(v);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayHomePage(v);
             }
         });
 
@@ -66,6 +76,11 @@ public class FragmentedTips extends AppCompatActivity {
 
     public void displayTasksList(View view){
         Intent intent = new Intent(this, ToDoList.class);
+        startActivity(intent);
+    }
+
+    public void displayHomePage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
