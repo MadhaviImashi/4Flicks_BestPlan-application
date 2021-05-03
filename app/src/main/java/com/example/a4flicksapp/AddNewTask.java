@@ -29,11 +29,11 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
         inputDesc = findViewById(R.id.editTextDescription);
     }
 
+    //implement the methods related to timePicker dialog class
     public void showTimePickerDialog(View v) {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getSupportFragmentManager(), "timePicker");
     }
-
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         displayTime = (TextView) findViewById(R.id.tvTime);
