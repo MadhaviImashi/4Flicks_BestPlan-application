@@ -22,10 +22,11 @@
         app:titleTextColor="@color/white" />
 
     <ImageButton
-        android:id="@+id/btnback"
+        android:id="@+id/AddBtnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF9C0A"
+        android:onClick="displayGroceryList"
         android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tbAddGrocery"
         app:layout_constraintStart_toStartOf="@+id/tbAddGrocery"
@@ -120,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:backgroundTint="#FF7F00"
+        android:onClick="displayGroceryList"
         android:text="@string/grocery_add_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
@@ -147,7 +149,7 @@
         app:srcCompat="@drawable/price_tag" />
 
     <ImageView
-        android:id="@+id/addquantityImage"
+        android:id="@+id/addQuantityImage"
         android:layout_width="20dp"
         android:layout_height="30dp"
         android:layout_marginTop="28dp"

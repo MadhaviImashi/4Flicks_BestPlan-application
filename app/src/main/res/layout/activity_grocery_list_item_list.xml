@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".GroceryListItemList">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewGrocery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbListGrocery"
         android:layout_width="match_parent"
@@ -22,37 +33,51 @@
         app:titleTextColor="@color/white" />
 
     <ImageButton
-        android:id="@+id/btnback"
+        android:id="@+id/listBtnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF9C0A"
+        android:onClick="displayGroceryListHome"
         android:tint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/tbAddGrocery"
-        app:layout_constraintStart_toStartOf="@+id/tbAddGrocery"
-        app:layout_constraintTop_toTopOf="@+id/tbAddGrocery"
+        app:layout_constraintBottom_toBottomOf="@+id/tbListGrocery"
+        app:layout_constraintStart_toStartOf="@+id/tbListGrocery"
+        app:layout_constraintTop_toTopOf="@+id/tbListGrocery"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbAddGrocery"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/goToAddItem"
+    <TextView
+        android:id="@+id/groceryTotalView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="320dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginStart="80dp"
+        android:text="@string/grocery_list_txt_tot_amount"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/groceryTotalAmount"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/groceryTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="2000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/groceryGoToAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toEndOf="@+id/groceryTotalView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/groceryGoToAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="52dp"
         android:clickable="true"
+        android:onClick="displayGroceryListAddItem"
         app:backgroundTint="#FF7F00"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

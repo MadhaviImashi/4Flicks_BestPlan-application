@@ -21,4 +21,10 @@ public class GroceryListHome extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //create onclick method to navigate to my grocery list
+    public void displayGroceryListItemList(View view) {
+        Intent intent = new Intent(this, GroceryListItemList.class);
+        startActivity(intent);
+    }
+
 }

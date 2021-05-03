@@ -14,4 +14,10 @@ public class GroceryListAddItem extends AppCompatActivity {
         setContentView(R.layout.activity_grocery_list_add_item);
     }
 
+    //create onclick method to navigate to your grocery list
+    public void displayGroceryList(View view) {
+        Intent intent = new Intent(this, GroceryListItemList.class);
+        startActivity(intent);
+    }
+
 }
