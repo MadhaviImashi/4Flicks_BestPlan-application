@@ -11,12 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class bmiCalculator extends AppCompatActivity {
 
     Button btnFragmentMainNav, calculateBMI;
+    ImageButton btnHome;
     EditText inputH, inputW, inputAge;
     TextView BMIresult;
 
@@ -31,6 +33,7 @@ public class bmiCalculator extends AppCompatActivity {
 
         btnFragmentMainNav = findViewById(R.id.btnFragmentMainNav);
         calculateBMI = findViewById(R.id.calculateBMI);
+        btnHome = findViewById(R.id.homeButton);
         BMIresult = findViewById(R.id.tvBMIresult);
         inputH = findViewById(R.id.h);
         inputW = findViewById(R.id.w);
@@ -65,6 +68,13 @@ public class bmiCalculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calculateBMI(v);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayHomePage(v);
             }
         });
     }
@@ -106,6 +116,11 @@ public class bmiCalculator extends AppCompatActivity {
     public void displayFragmentsMain(View view){
 
         Intent intent = new Intent(this, FragmentedTips.class);
+        startActivity(intent);
+    }
+
+    public void displayHomePage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
