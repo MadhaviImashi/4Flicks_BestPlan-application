@@ -55,4 +55,8 @@
     <string name="tvWelcomeMeal">Welcome to Meal Planner</string>
     <string name="btnAddMealPlan">Add Meal Plan</string>
     <string name="btnCalorM">Calorie Calculator</string>
+    <string name="hintenday">Enter Day</string>
+    <string name="hintEnBr">Enter Breakfast</string>
+    <string name="hintEnLu">Enter Lunch</string>
+    <string name="hintEnDin">Enter Dinner</string>
 </resources>
