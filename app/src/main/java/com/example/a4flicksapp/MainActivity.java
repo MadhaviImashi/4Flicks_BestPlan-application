@@ -31,6 +31,5 @@ public class MainActivity extends AppCompatActivity {
     public void goToGroceryListHome(View view) {
         Intent intent = new Intent(this, GroceryListHome.class);
         startActivity(intent);
-        Toast.makeText(getApplicationContext(), "Welcome To Best Plan Grocery List", Toast.LENGTH_SHORT).show();
     }
 }
