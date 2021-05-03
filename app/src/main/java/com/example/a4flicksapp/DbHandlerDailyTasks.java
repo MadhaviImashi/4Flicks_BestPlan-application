@@ -87,6 +87,7 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         return cursor.getCount(); //getCount method of cursor class, returns the no of rows in the cursor
     }
 
+
     //QUESTIONS
     //everytime when we create a new object of this handler class, after running the constructor, does it create a new table during onCreate execution always?
         //NO, a new table will be created only if there is'nt a table from that name. unless it will not

@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -75,6 +76,9 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
         //now call the insert() method in DBHandler class by passing the modelObj into it
         dbHandlerObj.insertDailyTask(modelObj);
 
+        //after the data is stored from the above method, redirect the user to ToDoList activity
+        Intent i = new Intent(this, ToDoList.class);
+        startActivity(i);
     }
 
 }

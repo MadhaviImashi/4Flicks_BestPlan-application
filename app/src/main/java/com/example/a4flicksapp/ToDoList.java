@@ -34,7 +34,7 @@ public class ToDoList extends AppCompatActivity {
         //create a db handler obj to access count method of it
         DbHandlerDailyTasks handlerObj = new DbHandlerDailyTasks(context);
 
-        String showCount = handlerObj.countNoOfTasks() + "Tasks to do";
+        String showCount = handlerObj.countNoOfTasks() + " Tasks to do";
         count.setText(showCount);
 
         btnAddNewTask.setOnClickListener(new View.OnClickListener() {
