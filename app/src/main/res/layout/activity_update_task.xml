@@ -8,7 +8,7 @@
     tools:context=".UpdateTask">
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTextDescription"
         android:layout_width="216dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
@@ -34,7 +34,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toStartOf="@+id/editTextDescription"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
@@ -51,7 +51,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
+
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
