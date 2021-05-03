@@ -25,4 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void displayaddmeal(View view){
+
+        Intent intent = new Intent(this, AddMeal.class);
+
+        startActivity(intent);
+    }
 }

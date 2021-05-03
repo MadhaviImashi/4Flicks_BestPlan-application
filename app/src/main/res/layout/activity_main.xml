@@ -54,6 +54,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="75dp"
         android:background="@drawable/roundstyle"
+        android:onClick="displayaddmeal"
         android:text="@string/btnPlanMeal"
         app:backgroundTint="@color/homeNavBtn"
         app:layout_constraintStart_toStartOf="parent"

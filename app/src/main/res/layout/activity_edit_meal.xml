@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editMeal">
+
+
+    <EditText
+        android:id="@+id/editday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="167dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="enter day"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editbr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="69dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="enter br"
+        app:layout_constraintBottom_toTopOf="@+id/editlu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editday" />
+
+    <EditText
+        android:id="@+id/editlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="159dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="enter lu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editbr" />
+
+    <EditText
+        android:id="@+id/editdin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginBottom="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="enter din"
+        app:layout_constraintBottom_toTopOf="@+id/editdmeal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editlu" />
+
+    <Button
+        android:id="@+id/editdmeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="70dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editdin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="230dp"
+        android:text="update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
