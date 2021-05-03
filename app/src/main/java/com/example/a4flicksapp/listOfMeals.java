@@ -44,6 +44,13 @@ public class listOfMeals extends AppCompatActivity {
         int countmeals1 = dbHandler.countmeals();
         count1.setText("You have "+countmeals1+" meals");
 
+        add1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,AddMeal.class));
+            }
+        });
+
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
