@@ -24,14 +24,11 @@
         android:id="@+id/MealList"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
         android:layout_marginBottom="670dp"
         app:layout_constraintBottom_toTopOf="@+id/MealAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -40,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="24dp"
-        android:text="You have x meals In Today"
+        android:text="You Have x Meals "
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/MealAdd"
@@ -53,7 +50,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="13dp"
-        android:text=" Add ToDo"
+        android:text="@string/btnAdmeal"
+        app:backgroundTint="@color/homeNavBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MealCount" />

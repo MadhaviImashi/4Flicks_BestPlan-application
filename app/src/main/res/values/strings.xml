@@ -65,4 +65,5 @@
     <string name="TvUpDin">Update Dinner</string>
     <string name="btnUpMealP">Update Meal Plan</string>
     <string name="TvUpMlPl">Update Meal Plan</string>
+    <string name="btnAdmeal">Add Meal</string>
 </resources>
