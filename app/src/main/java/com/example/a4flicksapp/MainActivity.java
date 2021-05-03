@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayaddmeal(View view){
 
-        Intent intent = new Intent(this, AddMeal.class);
+        Intent intent = new Intent(this, welcomeMeal.class);
 
         startActivity(intent);
     }

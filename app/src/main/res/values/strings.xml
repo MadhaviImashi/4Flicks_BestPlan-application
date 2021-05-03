@@ -52,4 +52,7 @@
     <string name="timeHint">Time</string>
     <string name="taskDescriptionHint">Task description</string>
     <string name="tvTime">Time</string>
+    <string name="tvWelcomeMeal">Welcome to Meal Planner</string>
+    <string name="btnAddMealPlan">Add Meal Plan</string>
+    <string name="btnCalorM">Calorie Calculator</string>
 </resources>

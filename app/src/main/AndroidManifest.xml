@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.4FlicksApp">
-        <activity android:name=".editMeal"></activity>
+        <activity android:name=".welcomeMeal"></activity>
+        <activity android:name=".editMeal" />
         <activity android:name=".listOfMeals" />
         <activity android:name=".AddMeal" />
         <activity android:name=".bmiCalculator" />
