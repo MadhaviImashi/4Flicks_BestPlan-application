@@ -36,15 +36,15 @@ public class calorCalcu extends AppCompatActivity {
         float calintake= calvalues+calvalues2+calvalues3;
 
         if(calintake<2000){
-            calresult="Your calorie intake should be higher";
+            calresult="Your Calorie Intake Should Be Higher";
 
         }else if (calintake>2700){
-            calresult="Your calorie intake should be Lower";
+            calresult="Your Calorie Intake Should Be Lower";
 
         }else if (calintake>=2000 && calintake<=2700){
-            calresult="Your calorie intake should be perfect";
+            calresult="Your Calorie Intake Is Perfect";
         }
-        calcalculation="result \n\n" +calintake+ "\n"+calresult;
+        calcalculation="Calorie Intake \n" +calintake+ "\n"+calresult;
         calres.setText(calcalculation);
 
 

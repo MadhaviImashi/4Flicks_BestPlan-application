@@ -67,4 +67,5 @@
     <string name="TvUpMlPl">Update Meal Plan</string>
     <string name="btnAdmeal">Add Meal</string>
     <string name="Tvcalocal">Calorie Calculator</string>
+    <string name="btnCalCalo">Calculate</string>
 </resources>
