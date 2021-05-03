@@ -79,7 +79,13 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         sqLiteDatabase.close();//since in our project there are 4 db connections, it's good to close each connection when they are done to avoid conflicts
     }
 
+    public int countNoOfTasks(){
+        SQLiteDatabase db = getReadableDatabase();
+        String countQuery = "SELECT * FROM " + TABLE_NAME;
 
+        Cursor cursor = db.rawQuery(countQuery, null); //all the rows related to the query will be stored in this cursor obj
+        return cursor.getCount(); //getCount method of cursor class, returns the no of rows in the cursor
+    }
 
     //QUESTIONS
     //everytime when we create a new object of this handler class, after running the constructor, does it create a new table during onCreate execution always?
