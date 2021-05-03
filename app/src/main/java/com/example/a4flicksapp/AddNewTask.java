@@ -74,6 +74,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
 
         //now call the insert() method in DBHandler class by passing the modelObj into it
         dbHandlerObj.insertDailyTask(modelObj);
+
     }
 
 }

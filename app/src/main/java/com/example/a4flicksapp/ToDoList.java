@@ -18,7 +18,7 @@ public class ToDoList extends AppCompatActivity {
     private ListView listView;
     private TextView count;
 
-    //Context context;//a context object
+    Context context;//a context object
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,13 @@ public class ToDoList extends AppCompatActivity {
         btnAddNewTask = findViewById(R.id.floatingActionButton);
         listView = findViewById(R.id.tasksList); //this listView will be needed to set the Adapter
         count = findViewById(R.id.displayCount);
-        //context = this;
+        context = this;
+
+        //create a db handler obj to access count method of it
+        DbHandlerDailyTasks handlerObj = new DbHandlerDailyTasks(context);
+
+        String showCount = handlerObj.countNoOfTasks() + "Tasks to do";
+        count.setText(showCount);
 
         btnAddNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
