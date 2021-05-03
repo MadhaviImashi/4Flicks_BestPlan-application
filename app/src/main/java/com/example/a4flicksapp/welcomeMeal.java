@@ -20,4 +20,11 @@ public class welcomeMeal extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void displaycalorie(View view){
+
+        Intent intent = new Intent(this, calorCalcu.class);
+
+        startActivity(intent);
+    }
 }

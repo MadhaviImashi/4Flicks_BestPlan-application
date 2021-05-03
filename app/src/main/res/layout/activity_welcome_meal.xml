@@ -42,6 +42,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="94dp"
         android:layout_marginEnd="35dp"
+        android:onClick="displaycalorie"
         android:text="@string/btnCalorM"
         app:backgroundTint="@color/homeNavBtn"
         app:layout_constraintEnd_toEndOf="parent"
