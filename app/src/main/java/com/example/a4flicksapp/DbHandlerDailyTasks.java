@@ -1,6 +1,8 @@
 package com.example.a4flicksapp;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -60,6 +62,24 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
 
 
     }
+
+    //create a method to insert user input data to DB(since this method will be accessed by the model class, make it as a public method)
+    public void insertDailyTask(DailyTaskModel modelObj){
+        //create a new database writable object to write data into db
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        //create a contentValues object to structure data and put in the db
+        ContentValues contentValues = new ContentValues();
+            //now put the user input data into the ContentValues obj by calling the get methods in model class
+            contentValues.put(TIME, modelObj.getTime());
+            contentValues.put(DESCRIPTION,modelObj.getDescription()); //since id is autoincrementing, it is not needed to send by us. ** put(key,data) here key is the column name**
+            contentValues.put(STARTED, modelObj.getStarted());
+            contentValues.put(FINISHED, modelObj.getFinished());
+        //now save these values to table
+        sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+        sqLiteDatabase.close();//since in our project there are 4 db connections, it's good to close each connection when they are done to avoid conflicts
+    }
+
+
 
     //QUESTIONS
     //everytime when we create a new object of this handler class, after running the constructor, does it create a new table during onCreate execution always?
