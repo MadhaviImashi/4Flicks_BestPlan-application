@@ -1,5 +1,6 @@
 package com.example.a4flicksapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,13 +38,21 @@ public class GroceryListItemList extends AppCompatActivity {
 
         StoreData();
 
-        customAdapter = new GroceryAdapter(GroceryListItemList.this,item_id,item_name,item_price,quantity);
+        customAdapter = new GroceryAdapter(GroceryListItemList.this,GroceryListItemList.this,item_id,item_name,item_price,quantity);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager((new LinearLayoutManager(GroceryListItemList.this)));
         textView = (TextView)findViewById(R.id.groceryTotalAmount);
         totalAmount = getTotal();
         String totString = String.format("%.2f",totalAmount);
         textView.setText(String.valueOf(totString));
+    }
+
+    @Override //update method
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            recreate();
+        }
     }
 
     //create onclick method to navigate to grocery list add item view

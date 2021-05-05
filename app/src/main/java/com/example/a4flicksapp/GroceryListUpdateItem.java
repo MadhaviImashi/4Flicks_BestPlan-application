@@ -26,15 +26,25 @@ public class GroceryListUpdateItem extends AppCompatActivity {
         //First get data and set data
         getAndSetIntentData();
 
+        //create onclickListener method to navigate to view grocery item UI
         edit_button=findViewById(R.id.groceryEditBtn);
         edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //after call getAndSetIntentData update database
+                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
+                item_name = item_name_input.getText().toString().trim();
+                item_price = item_price_input.getText().toString().trim();
+                item_quantity = item_quantity_input.getText().toString().trim();
+                myDB.updateItemData(id,item_name,item_price,item_quantity);
 
+                Intent intent = new Intent(GroceryListUpdateItem.this, GroceryListItemList.class);
+                startActivity(intent);
             }
         });
     }
 
+    //navigate to the grocery list view
     public void displayGroceryList(View view){
         Intent intent = new Intent(this,GroceryListItemList.class);
         startActivity(intent);

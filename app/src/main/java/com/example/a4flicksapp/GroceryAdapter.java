@@ -1,5 +1,6 @@
 package com.example.a4flicksapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,9 +16,11 @@ import java.util.ArrayList;
 
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.MyViewHolder> {
     private Context context;
+    Activity activity;//update method (create new activity to display update grocery list)
     private ArrayList item_id, item_name,item_price,quantity;
 
-    GroceryAdapter(Context context, ArrayList item_id, ArrayList item_name, ArrayList item_price, ArrayList quantity) {
+    GroceryAdapter(Activity activity, Context context, ArrayList item_id, ArrayList item_name, ArrayList item_price, ArrayList quantity) {
+        this.activity = activity;
         this.context = context;
         this.item_id = item_id;
         this.item_name = item_name;
@@ -46,7 +49,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.MyViewHo
                 intent.putExtra("item_name",String.valueOf(item_name.get(position)));
                 intent.putExtra("price",String.valueOf(item_price.get(position)));
                 intent.putExtra("quantity",String.valueOf(quantity.get(position)));
-                context.startActivity(intent);
+                activity.startActivityForResult(intent,1);
             }
         });
     }

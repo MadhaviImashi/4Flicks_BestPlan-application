@@ -70,4 +70,21 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    //update grocery item
+    void updateItemData(String row_id, String item_name, String price, String quantity){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_NAME,item_name);
+        cv.put(COLUMN_PRICE,price);
+        cv.put(COLUMN_QUANTITY,quantity);
+
+        long result = db.update(TABLE_NAME,cv,"id=?",new String[]{row_id});
+        if(result == -1){
+            Toast.makeText(context,"Failed to Update Grocery Item",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context,"Successfully Updated",Toast.LENGTH_SHORT).show();
+        }
+    }
 }
