@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,7 +24,7 @@ public class GroceryListItemList extends AppCompatActivity {
     ArrayList<String> item_id, item_name, item_price, quantity;
     GroceryAdapter customAdapter;
     TextView total_amount_textView,empty_text,total_view;
-    ImageView empty_image;
+    ImageView empty_image,delete_all_items;
     FloatingActionButton add_item_float_btn;
     float totalAmount = 0;
 
@@ -39,6 +40,7 @@ public class GroceryListItemList extends AppCompatActivity {
         total_amount_textView=findViewById(R.id.groceryTotalAmount);
         total_view=findViewById(R.id.groceryTotalView);
         add_item_float_btn=findViewById(R.id.groceryGoToAddItem);
+        delete_all_items=findViewById(R.id.delete_all_items);
 
         myDB = new DBHandlerGrocery(GroceryListItemList.this);
         item_id = new ArrayList<>();
@@ -63,6 +65,15 @@ public class GroceryListItemList extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(GroceryListItemList.this,GroceryListAddItem.class);
                 startActivity(intent);
+            }
+        });
+
+        //create onClickListener method call deleteAllGroceryItems method
+        delete_all_items.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListItemList.this);
+                myDB.deleteAllGroceryItems();
             }
         });
     }
