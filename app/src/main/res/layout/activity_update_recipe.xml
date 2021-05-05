@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/EditRecipeName"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/EditRecipeIngredients"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditRecipeName" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <EditText
         android:id="@+id/EditDirections"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
