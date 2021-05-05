@@ -110,7 +110,8 @@ public class ToDoList extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-
+                        taskObj.setFinished(System.currentTimeMillis()); //set a value > 0 (current time) to the Finished column of this object
+                        handlerObj.updateTask(taskObj);//now the Finished value of this taskObj will be updated
 
                         Intent i = new Intent(context, ToDoList.class);
                         startActivity(i);
