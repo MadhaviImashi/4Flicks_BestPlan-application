@@ -9,8 +9,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -19,7 +22,9 @@ public class GroceryListItemList extends AppCompatActivity {
     DBHandlerGrocery myDB;
     ArrayList<String> item_id, item_name, item_price, quantity;
     GroceryAdapter customAdapter;
-    TextView textView;
+    TextView total_amount_textView,empty_text,total_view;
+    ImageView empty_image;
+    FloatingActionButton add_item_float_btn;
     float totalAmount = 0;
 
     //get grocery list using recycler view
@@ -29,6 +34,11 @@ public class GroceryListItemList extends AppCompatActivity {
         setContentView(R.layout.activity_grocery_list_item_list);
 
         recyclerView=findViewById(R.id.recyclerViewGrocery);
+        empty_image=findViewById(R.id.no_data_image);
+        empty_text=findViewById(R.id.no_data_text);
+        total_amount_textView=findViewById(R.id.groceryTotalAmount);
+        total_view=findViewById(R.id.groceryTotalView);
+        add_item_float_btn=findViewById(R.id.groceryGoToAddItem);
 
         myDB = new DBHandlerGrocery(GroceryListItemList.this);
         item_id = new ArrayList<>();
@@ -41,10 +51,19 @@ public class GroceryListItemList extends AppCompatActivity {
         customAdapter = new GroceryAdapter(GroceryListItemList.this,GroceryListItemList.this,item_id,item_name,item_price,quantity);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager((new LinearLayoutManager(GroceryListItemList.this)));
-        textView = (TextView)findViewById(R.id.groceryTotalAmount);
+
         totalAmount = getTotal();
         String totString = String.format("%.2f",totalAmount);
-        textView.setText(String.valueOf(totString));
+        total_amount_textView.setText(String.valueOf(totString));
+
+        //create onClickListener method to navigate Add item View
+        add_item_float_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GroceryListItemList.this,GroceryListAddItem.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override //update method (after update the data redirect to grocery list view with updated data)
@@ -53,12 +72,6 @@ public class GroceryListItemList extends AppCompatActivity {
         if(requestCode == 1){
             recreate();
         }
-    }
-
-    //create onclick method to navigate to grocery list add item view
-    public void displayGroceryListAddItem(View view) {
-        Intent intent = new Intent(this, GroceryListAddItem.class);
-        startActivity(intent);
     }
 
     //create onclick method to navigate to grocery list home view
@@ -70,7 +83,10 @@ public class GroceryListItemList extends AppCompatActivity {
     void StoreData(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
-            Toast.makeText(this,"No Data",Toast.LENGTH_SHORT).show();
+            empty_image.setVisibility(View.VISIBLE);
+            empty_text.setVisibility(View.VISIBLE);
+            total_amount_textView.setVisibility(View.GONE);
+            total_view.setVisibility(View.GONE);
         }
         else{
             while(cursor.moveToNext()){
@@ -79,6 +95,10 @@ public class GroceryListItemList extends AppCompatActivity {
                 item_price.add(cursor.getString(2));
                 quantity.add(cursor.getString(3));
             }
+            empty_image.setVisibility(View.GONE);
+            empty_text.setVisibility(View.GONE);
+            total_amount_textView.setVisibility(View.VISIBLE);
+            total_view.setVisibility(View.VISIBLE);
         }
     }
 
@@ -88,10 +108,8 @@ public class GroceryListItemList extends AppCompatActivity {
         float itemPrice = 0;
         String price = "0",qut="0";
         Cursor cursor = myDB.readAllData();
-        if (cursor.getCount() == 0) {
-            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
-        }else{
-            while(cursor.moveToNext()){
+        if (cursor.getCount() != 0) {
+            while(cursor.moveToNext()) {
                 price = cursor.getString(cursor.getColumnIndex("price"));
                 qut = cursor.getString(cursor.getColumnIndex("quantity"));
                 itemPrice = Float.parseFloat(price) * Float.parseFloat(qut);

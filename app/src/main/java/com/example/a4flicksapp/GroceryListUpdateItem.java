@@ -86,7 +86,7 @@ public class GroceryListUpdateItem extends AppCompatActivity {
     // if YES call deleteGroceryItem method in DBHandlerGrocery and navigate to grocery list View
     void confirmDialogBox(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete" + item_name + " ?");
+        builder.setTitle("Delete " + item_name + " ?");
         builder.setMessage("Are you sure you want to delete " + item_name + " ?");
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
