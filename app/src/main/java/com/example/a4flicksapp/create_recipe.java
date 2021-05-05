@@ -13,8 +13,6 @@ public class create_recipe extends AppCompatActivity {
     private TextInputEditText RecipeName;
     private  TextInputEditText RecipeIngredients;
     private  TextInputEditText RecipeDirections;
-    private Button AddRecipeImageBtn;
-    private ImageView RecipeImage;
     private  Button SubmitRecipe;
 
     @Override
@@ -25,8 +23,6 @@ public class create_recipe extends AppCompatActivity {
         RecipeName = findViewById(R.id.editRecipeName);
         RecipeIngredients = findViewById(R.id.editRecipeIngredients);
         RecipeDirections = findViewById(R.id.editDirections);
-        AddRecipeImageBtn = findViewById(R.id.imageButton);
-        RecipeImage = findViewById(R.id.editRecipeInputImage);
         SubmitRecipe = findViewById(R.id.recipeSubmit);
     }
 }
