@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class recipe extends AppCompatActivity {
 
     private TextView NameOfRecipe;
-    private ImageView ImageOfRecipe;
     private TextView IngredientsOfRecipe;
     private TextView StepsOfRecipe;
     private Button UpdateRecipeBtn;
@@ -25,7 +24,6 @@ public class recipe extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
 
         NameOfRecipe = findViewById(R.id.RecipeName);
-        ImageOfRecipe = findViewById(R.id.RecipeImage);
         IngredientsOfRecipe = findViewById(R.id.ingredientsList);
         StepsOfRecipe = findViewById(R.id.Steps);
         UpdateRecipeBtn = findViewById(R.id.Updatebtn);
