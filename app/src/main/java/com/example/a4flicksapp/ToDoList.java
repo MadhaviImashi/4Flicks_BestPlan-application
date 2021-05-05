@@ -99,6 +99,8 @@ public class ToDoList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         Intent i = new Intent(context, UpdateTask.class);
+
+                        i.putExtra("id", String.valueOf(taskObj.getId())); //this is not essential
                         i.putExtra("Time", time);
                         i.putExtra("Description", desc);
                         startActivity(i);
@@ -107,6 +109,9 @@ public class ToDoList extends AppCompatActivity {
                 alertBuilder.setNeutralButton("Done", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+
+
                         Intent i = new Intent(context, ToDoList.class);
                         startActivity(i);
                     }

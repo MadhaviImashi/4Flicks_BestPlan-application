@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -25,10 +26,12 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
     private static final String DESCRIPTION = "description";
     private static final String STARTED = "started";
     private static final String FINISHED = "finished";
+    Context context;
 
     //constructor
     public DbHandlerDailyTasks(@Nullable Context context) {
         super(context, DB_NAME , null, VERSION); //calling the constructor of the SQLiteOpenHelper super class to create the DB
+        this.context = context;
         //since this isn't an activity java class but a normal java class, this don't get a context in general.
         // therefor context is a parameter that we have to give definitely everytime when we creating objects from this class
     }
@@ -78,7 +81,14 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
             contentValues.put(STARTED, modelObj.getStarted());
             contentValues.put(FINISHED, modelObj.getFinished());
         //now save these values to table
-        sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+        long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
+
+        if (result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        }
+        else
+            Toast.makeText(context, "successfully added", Toast.LENGTH_LONG).show();
+
         sqLiteDatabase.close();//since in our project there are 4 db connections, it's good to close each connection when they are done to avoid conflicts
     }
 
@@ -120,9 +130,35 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         return modleObjOfTASKS; //this arraylist will be returned
     }
 
-    public void updateTask(){
+    public void updateTask(DailyTaskModel modelObj){
+        SQLiteDatabase db = getWritableDatabase();
 
+        //new value for one column
+        ContentValues cv = new ContentValues();
+        cv.put(TIME, modelObj.getTime());
+        cv.put(DESCRIPTION, modelObj.getDescription());
+        cv.put(STARTED, modelObj.getStarted());
+        cv.put(FINISHED, modelObj.getFinished());
+
+        long result = db.update(TABLE_NAME, cv,ID +" =?", new String[]{String.valueOf(modelObj.getId())});
+        if (result == -1){
+            Toast.makeText(context, "Failed to update", Toast.LENGTH_SHORT).show();
+        }
+        else
+            Toast.makeText(context, "successfully Updated", Toast.LENGTH_LONG).show();
+        db.close();
     }
+
+    /*public DailyTaskModel getSingleTask(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursorObj = db.query(TABLE_NAME, new String[]{ID, TIME, DESCRIPTION, STARTED, FINISHED}, null, null, null, null, null );
+
+        DailyTaskModel modelObj; //new empty model class obj
+        //check whether value is there in the cursor obj
+        if (cursorObj != null){
+            modelObj = new DailyTaskModel();
+        }
+    }*/
 
     public void deleteTask(int id){
 
