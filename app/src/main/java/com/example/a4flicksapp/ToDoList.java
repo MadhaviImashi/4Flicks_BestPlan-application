@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class ToDoList extends AppCompatActivity {
     private FloatingActionButton btnAddNewTask;
     private ListView listView;
     private TextView count;
+    private ImageButton btnHomeOfList;
 
     Context context;//a context object
 
@@ -27,6 +29,7 @@ public class ToDoList extends AppCompatActivity {
 
         //initialize the object vaiables
         btnAddNewTask = findViewById(R.id.floatingActionButton);
+        btnHomeOfList = findViewById(R.id.btnHomeOfList);
         listView = findViewById(R.id.tasksList); //this listView will be needed to set the Adapter
         count = findViewById(R.id.displayCount);
         context = this;
@@ -34,7 +37,7 @@ public class ToDoList extends AppCompatActivity {
         //create a db handler obj to access count method of it
         DbHandlerDailyTasks handlerObj = new DbHandlerDailyTasks(context);
 
-        String showCount = handlerObj.countNoOfTasks() + " Tasks to do";
+        String showCount = handlerObj.countNoOfTasks() + " Tasks to do"; //call the count method
         count.setText(showCount);
 
         btnAddNewTask.setOnClickListener(new View.OnClickListener() {
@@ -43,10 +46,22 @@ public class ToDoList extends AppCompatActivity {
                 displayAddNewTaskActivity(v);
             }
         });
+
+        btnHomeOfList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayHomePage(v);
+            }
+        });
     }
 
     public void displayAddNewTaskActivity(View view){
         Intent intent = new Intent(this, AddNewTask.class);
+        startActivity(intent);
+    }
+
+    public void displayHomePage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
     String msg;
 
     private Button btnAddTask;
+    private ImageButton btnHomeOfAddTask;
     private EditText  inputDesc;
     private TextView displayTime;
     String timeInHours, timeInMins;
@@ -33,6 +35,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
         setContentView(R.layout.activity_add_new_task);
 
         btnAddTask = findViewById(R.id.btnAddTask);
+        btnHomeOfAddTask = findViewById(R.id.btnHomeOfAddTask);
         inputDesc = findViewById(R.id.editTextDescription);
         context = this;
 
@@ -46,6 +49,13 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
                 callToDoListActvity(v);
             }
         });
+
+        btnHomeOfAddTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayHomePage(v);
+            }
+        });
     }
 
     //implement the methods related to timePicker dialog class
@@ -56,11 +66,11 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         displayTime = (TextView) findViewById(R.id.tvTime);
-        displayTime.setText("Hour: " + hourOfDay + " Minute: " + minute);
+        displayTime.setText("Hour: " + hourOfDay + "\nminutes: " + minute);
         timeInHours = String.valueOf(hourOfDay);
         timeInMins = String.valueOf(minute);
 
-        msg = "You have set the time as : " + hourOfDay + ":" + minute + "to complete the Task";
+        msg = "You have set the time as : " + hourOfDay + "." + minute + "to complete the Task";
         Toast.makeText(this, "Hello "+ msg, Toast.LENGTH_LONG).show();
     }
 
@@ -81,4 +91,8 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
         startActivity(i);
     }
 
+    public void displayHomePage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }

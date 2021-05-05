@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="textEnd"
-    tools:context=".MainActivity">
+    tools:context=".bmiCalculator">
 
     <TextView
         android:id="@+id/textView8"
@@ -226,14 +226,14 @@
     <ImageButton
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
-        android:layout_height="33dp"
+        android:layout_height="31dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="357dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="367dp"
         android:layout_marginBottom="687dp"
         app:srcCompat="@drawable/screenshot_2" />
 
