@@ -82,13 +82,16 @@ public class ToDoList extends AppCompatActivity {
                 String tvDesc = "\t\t\t\t\t\t" + desc;
 
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
-                alertBuilder.setTitle(time);
-                alertBuilder.setMessage(desc);
+                alertBuilder.setTitle(tvTime);
+                alertBuilder.setMessage(tvDesc);
 
                 alertBuilder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        handlerObj.deleteTask(position);
+                        handlerObj.deleteTask(taskObj.getId());//call the deleteTask() to delete this taskObj
+                        //redirrect the user to the same activity
+                        Intent i = new Intent(context, ToDoList.class);
+                        startActivity(i);
                     }
                 });
                 alertBuilder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
@@ -96,8 +99,8 @@ public class ToDoList extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         Intent i = new Intent(context, UpdateTask.class);
-                        i.putExtra("Time", tvTime);
-                        i.putExtra("Description", tvDesc);
+                        i.putExtra("Time", time);
+                        i.putExtra("Description", desc);
                         startActivity(i);
                     }
                 });

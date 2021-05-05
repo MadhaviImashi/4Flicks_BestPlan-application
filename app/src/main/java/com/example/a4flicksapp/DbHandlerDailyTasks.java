@@ -120,8 +120,15 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         return modleObjOfTASKS; //this arraylist will be returned
     }
 
-    public void deleteTask(int position){
+    public void updateTask(){
 
+    }
+
+    public void deleteTask(int id){
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME, ID +" =?", new String[]{String.valueOf(id)}); //use the delete() to delete
+        db.close();
     }
 
 
