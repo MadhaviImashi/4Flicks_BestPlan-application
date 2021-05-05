@@ -1,10 +1,12 @@
 package com.example.a4flicksapp;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -72,8 +74,7 @@ public class GroceryListItemList extends AppCompatActivity {
         delete_all_items.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListItemList.this);
-                myDB.deleteAllGroceryItems();
+                DeleteAllDialogBox();
             }
         });
     }
@@ -129,5 +130,29 @@ public class GroceryListItemList extends AppCompatActivity {
             }
         }
         return totalAmount;
+    }
+
+    //create dialog box to confirm all the item would be deleted or not
+    // if YES call deleteAllGroceryItems method in DBHandlerGrocery and recreate grocery list view
+    void DeleteAllDialogBox(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(GroceryListItemList.this);
+        builder.setTitle("Delete All?");
+        builder.setMessage("Are you sure you want to delete all the grocery items?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListItemList.this);
+                myDB.deleteAllGroceryItems(); //if YES delete selected grocery item in database table
+                recreate();//recreate the grocery list view
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if NO don't do anything
+            }
+        });
+        builder.create().show();
     }
 }
