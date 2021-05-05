@@ -120,6 +120,10 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         return modleObjOfTASKS; //this arraylist will be returned
     }
 
+    public void deleteTask(int position){
+
+    }
+
 
     //QUESTIONS
     //everytime when we create a new object of this handler class, after running the constructor, does it create a new table during onCreate execution always?

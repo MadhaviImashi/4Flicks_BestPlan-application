@@ -2,10 +2,13 @@ package com.example.a4flicksapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -62,6 +65,50 @@ public class ToDoList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayHomePage(v);
+            }
+        });
+
+        //implement the dialog box popup
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //get the task object which was selected by the user from the arrayList by calling the get() method
+                //and save that task in a model type obj
+                DailyTaskModel taskObj = dailyTasksList.get(position);
+                //now by calling the get() methods of model class, u can access any column data belongs to this particular task object
+                String time =  taskObj.getTime();
+                String desc =  taskObj.getDescription();
+                String tvTime = "\t\t\t\t\t\tTime - " + time;
+                String tvDesc = "\t\t\t\t\t\t" + desc;
+
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(context);
+                alertBuilder.setTitle(time);
+                alertBuilder.setMessage(desc);
+
+                alertBuilder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        handlerObj.deleteTask(position);
+                    }
+                });
+                alertBuilder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent i = new Intent(context, UpdateTask.class);
+                        i.putExtra("Time", tvTime);
+                        i.putExtra("Description", tvDesc);
+                        startActivity(i);
+                    }
+                });
+                alertBuilder.setNeutralButton("Done", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(context, ToDoList.class);
+                        startActivity(i);
+                    }
+                });
+                alertBuilder.show();
             }
         });
     }

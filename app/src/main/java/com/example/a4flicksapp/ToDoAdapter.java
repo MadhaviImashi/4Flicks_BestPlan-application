@@ -43,7 +43,7 @@ public class ToDoAdapter extends ArrayAdapter<DailyTaskModel> {  //since we are 
         DailyTaskModel taskObj = modelList.get(position); //from get() method, we can access the value belongs to the index no(position)
         tvTime.setText(taskObj.getTime());
         tvDesc.setText(taskObj.getDescription());
-        tvImage.setVisibility(oneRow.VISIBLE); //checkbox will not be  visible
+        tvImage.setVisibility(oneRow.INVISIBLE); //checkbox will not be  visible
 
         if(taskObj.getFinished() > 0){ //if returning value of getFinished is 0, the user has not yet clicked on Finished btn
             tvImage.setVisibility(View.VISIBLE);
