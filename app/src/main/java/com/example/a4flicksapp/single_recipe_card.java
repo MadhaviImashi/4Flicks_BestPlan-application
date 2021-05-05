@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 public class single_recipe_card extends AppCompatActivity {
 
-    private ImageView IconOfRecipe;
     private TextView NameOfRecipeIcon;
 
     @Override
@@ -16,7 +15,6 @@ public class single_recipe_card extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_recipe_card);
 
-        IconOfRecipe = findViewById(R.id.recipeIcon);
         NameOfRecipeIcon = findViewById(R.id.recipeNameIcon);
     }
 }
