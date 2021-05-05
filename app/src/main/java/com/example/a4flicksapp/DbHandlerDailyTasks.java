@@ -117,7 +117,7 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
             }while( cursorObj.moveToNext());//until the last row of the table, cursorObj will move one by one
         }
         //the loop will terminate when data in all the rows in the cursorObj have read and set to the new task model obj and ARRAYLIST will be created with those objects
-        return modleObjOfTASKS;
+        return modleObjOfTASKS; //this arraylist will be returned
     }
 
 

@@ -10,14 +10,14 @@
         android:id="@+id/layout1"
         android:layout_width="411dp"
         android:layout_height="83dp"
-
+        android:padding="7dp"
         android:background="@drawable/customborder"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
         <LinearLayout
-            android:layout_width="354dp"
+            android:layout_width="347dp"
             android:layout_height="71dp"
             android:orientation="vertical">
 
@@ -27,6 +27,8 @@
                 android:layout_height="32dp"
                 android:background="@color/taskTimeBg"
                 android:hint="@string/timeHint"
+                android:paddingLeft="7dp"
+                android:paddingTop="4dp"
                 android:text="6.00"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="218dp"
@@ -38,6 +40,8 @@
                 android:layout_height="48dp"
                 android:background="@color/taskDescriptionBg"
                 android:hint="@string/taskDescriptionHint"
+                android:paddingLeft="7dp"
+                android:paddingTop="6dp"
                 android:text="Drink a cup full of water"
                 android:textSize="18sp"
                 android:textStyle="bold|italic"
@@ -55,9 +59,12 @@
 
         <ImageView
             android:id="@+id/checkBox"
-            android:layout_width="53dp"
-            android:layout_height="49dp"
-            android:layout_weight="1"
+            android:layout_width="42dp"
+            android:layout_height="44dp"
+            android:layout_weight="0"
+            android:background="#FAF1E3"
+            android:padding="6dp"
+            android:paddingRight="10dp"
             android:visibility="invisible"
             app:srcCompat="@android:drawable/checkbox_on_background" />
 

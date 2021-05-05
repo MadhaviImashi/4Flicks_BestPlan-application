@@ -23,7 +23,7 @@ public class ToDoList extends AppCompatActivity {
     private TextView count;
     private ImageButton btnHomeOfList;
     Context context;//a context object
-    private List<DailyTaskModel> dailyTasks; //declare a model class type List variable
+    private List<DailyTaskModel> dailyTasksList; //declare a model class type List variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class ToDoList extends AppCompatActivity {
         listView = findViewById(R.id.tasksList); //this listView will be needed to set the Adapter
         count = findViewById(R.id.displayCount);
         context = this;
-        dailyTasks = new ArrayList<>(); //now a memory will be allocated to this dailyTasks variable
+        dailyTasksList = new ArrayList<>(); //now a memory will be allocated to this dailyTasks variable
 
         //create a db handler obj to access count method of it
         DbHandlerDailyTasks handlerObj = new DbHandlerDailyTasks(context);
@@ -44,8 +44,12 @@ public class ToDoList extends AppCompatActivity {
         String showCount = handlerObj.countNoOfTasks() + " Tasks to do"; //call the count method
         count.setText(showCount);
 
-        //call the data retrieving method in dbHandler class and assign data in a list type variable
-        dailyTasks = handlerObj.getAllTasks();
+        //call the data retrieving method in dbHandler class and assign the arraylist in a list type variable
+        dailyTasksList = handlerObj.getAllTasks();
+
+        ToDoAdapter adapter = new ToDoAdapter(context, R.layout.single_task, dailyTasksList ); //pass the single_task layout and arraylist
+        //now display the list of all rows on our LIST VIEW by calling the getView method in a loop
+        listView.setAdapter(adapter);
 
         btnAddNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
