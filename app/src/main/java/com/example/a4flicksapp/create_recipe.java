@@ -2,27 +2,49 @@ package com.example.a4flicksapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class create_recipe extends AppCompatActivity {
 
-    private TextInputEditText RecipeName;
-    private  TextInputEditText RecipeIngredients;
-    private  TextInputEditText RecipeDirections;
+    private EditText RecipeName;
+    private EditText RecipeIngredients;
+    private EditText RecipeDirections;
     private  Button SubmitRecipe;
+    private RecipeDbHandler recipeDbHandler;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        RecipeName = findViewById(R.id.editRecipeName);
-        RecipeIngredients = findViewById(R.id.editRecipeIngredients);
-        RecipeDirections = findViewById(R.id.editDirections);
-        SubmitRecipe = findViewById(R.id.recipeSubmit);
+        RecipeName = (EditText) findViewById(R.id.CRecipeName);
+        RecipeIngredients = (EditText) findViewById(R.id.CRecipeIngredients);
+        RecipeDirections = (EditText)findViewById(R.id.CDirections);
+        SubmitRecipe = (Button) findViewById(R.id.recipeSubmit);
+
+        context = this;
+        recipeDbHandler = new RecipeDbHandler(context);
+
+        SubmitRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String Recipe_Name = RecipeName.getText().toString();
+                String Recipe_Ingredients = RecipeIngredients.getText().toString();
+                String Recipe_Directions = RecipeDirections.getText().toString();
+                long started = System.currentTimeMillis();
+
+                recipeModel RecipeModel = new recipeModel(Recipe_Name, Recipe_Ingredients, Recipe_Directions, started,0);
+                recipeDbHandler.createRecipe(RecipeModel);
+
+            }
+        });
     }
 }

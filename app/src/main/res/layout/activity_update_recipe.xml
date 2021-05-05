@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/home" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editRecipeName"
+        android:id="@+id/EditRecipeName"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editRecipeIngredients"
+        android:id="@+id/EditRecipeIngredients"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -50,11 +50,12 @@
         android:layout_marginEnd="56dp"
         android:hint="Ingredients for the Recipe"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRecipeName" />
+        app:layout_constraintTop_toBottomOf="@+id/EditRecipeName" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editDirections"
+        android:id="@+id/EditDirections"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -63,7 +64,7 @@
         android:hint="Directions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRecipeIngredients" />
+        app:layout_constraintTop_toBottomOf="@+id/EditRecipeIngredients" />
 
     <Button
         android:id="@+id/recipeUpdate"
@@ -75,6 +76,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDirections" />
+        app:layout_constraintTop_toBottomOf="@+id/EditDirections" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

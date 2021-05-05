@@ -1,5 +1,6 @@
 package com.example.a4flicksapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -31,12 +32,12 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
 
         String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" "+
                 "("
-                +ID+"INTEGER PRIMARY KEY AUTOINCREMENT,"
-                +RECIPE_NAME+" TEXT,"
-                +RECIPE_INGREDIENTS+" TEXT,"
-                +RECIPE_DIRECTIONS+" TEXT,"
-                +STARTED+" TEXT,"
-                +FINISHED+" TEXT" +
+                + ID +" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + RECIPE_NAME +" TEXT,"
+                + RECIPE_INGREDIENTS +" TEXT,"
+                + RECIPE_DIRECTIONS +" TEXT,"
+                + STARTED +" TEXT,"
+                + FINISHED +" TEXT" +
                 ");";
         /* CREATE TABLE recipe(id INTEGER PRIMARY KEY AUTOINCREMENT, Recipe_Name TEXT, Recipe_Ingredients TEXT, Recipe_Directions TEXT) */
 
@@ -53,6 +54,26 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
         db.execSQL(DROP_TABLE_QUERY);
         //Creates the table again
         onCreate(db);
+
+    }
+
+    //method to insert recipe details to recipe table
+    public void createRecipe(recipeModel RecipeModel){
+
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(RECIPE_NAME, RecipeModel.getRecipe_Name());
+        contentValues.put(RECIPE_INGREDIENTS, RecipeModel.getRecipe_Ingredients());
+        contentValues.put(RECIPE_DIRECTIONS, RecipeModel.getRecipe_Directions());
+        contentValues.put(STARTED, RecipeModel.getStarted());
+        contentValues.put(FINISHED, RecipeModel.getFinished());
+
+        //Save above data to recipe table
+        sqLiteDatabase.insert(TABLE_NAME,null, contentValues);
+        //close database
+        sqLiteDatabase.close();
 
     }
 }

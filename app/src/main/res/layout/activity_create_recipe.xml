@@ -29,8 +29,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editRecipeName"
+    <EditText
+        android:id="@+id/CRecipeName"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -41,8 +41,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editRecipeIngredients"
+    <EditText
+        android:id="@+id/CRecipeIngredients"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -51,10 +51,10 @@
         android:hint="Ingredients for the Recipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRecipeName" />
+        app:layout_constraintTop_toBottomOf="@+id/CRecipeName" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editDirections"
+    <EditText
+        android:id="@+id/CDirections"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -62,8 +62,9 @@
         android:layout_marginEnd="56dp"
         android:hint="Directions"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRecipeIngredients" />
+        app:layout_constraintTop_toBottomOf="@+id/CRecipeIngredients" />
 
     <Button
         android:id="@+id/recipeSubmit"
@@ -75,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDirections" />
+        app:layout_constraintTop_toBottomOf="@+id/CDirections" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
