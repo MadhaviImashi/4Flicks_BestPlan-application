@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DbHandlerDailyTasks extends SQLiteOpenHelper {
     //methods which we use to coordinate with the DB are implemented inside this class(this is like a model class )
 
@@ -85,6 +88,36 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(countQuery, null); //all the rows related to the query will be stored in this cursor obj
         return cursor.getCount(); //getCount method of cursor class, returns the no of rows in the cursor
+    }
+
+    public List<DailyTaskModel> getAllTasks(){ //this getAllTAsks() method will return an arrayList. that arrayList contains, our model class type objects(for each row in the table)
+
+        List<DailyTaskModel> modleObjOfTASKS = new ArrayList(); //a new ArrayList is created using our model class type list objects
+
+        SQLiteDatabase db = getReadableDatabase();
+        String retrievQuery = "SELECT * FROM " + TABLE_NAME;
+
+        Cursor cursorObj = db.rawQuery(retrievQuery, null);
+
+        //values can be stored in this arrayList only if there are data in the DB //so we should first check the availabilty of data in the table
+        if(cursorObj.moveToFirst()){ //this will point to the first raw in the cursor obj //if there's no data, this will return FALSE
+            do{
+                //create new model object
+                DailyTaskModel taskModelObj = new DailyTaskModel();
+                //set values retrieved from the DB to this obj (using the cursorObj)
+                taskModelObj.setId(cursorObj.getInt(0)); //value in the 1st column of the table
+                taskModelObj.setTime(cursorObj.getString(1)); //value in the 2nd column
+                taskModelObj.setDescription(cursorObj.getString(2));
+                taskModelObj.setStarted(cursorObj.getLong(3));
+                taskModelObj.setFinished(cursorObj.getLong(4));
+
+                //now add this modelObj in to model type arraylist which we created at the begining
+                modleObjOfTASKS.add(taskModelObj); //this will create an arraylist
+
+            }while( cursorObj.moveToNext());//until the last row of the table, cursorObj will move one by one
+        }
+        //the loop will terminate when data in all the rows in the cursorObj have read and set to the new task model obj and ARRAYLIST will be created with those objects
+        return modleObjOfTASKS;
     }
 
 
