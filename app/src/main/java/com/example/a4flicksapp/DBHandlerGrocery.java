@@ -98,4 +98,10 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
             Toast.makeText(context,"Successfully Deleted",Toast.LENGTH_SHORT).show();
         }
     }
+
+    //delete all the grocery list item method
+    void deleteAllGroceryItems(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME);
+    }
 }

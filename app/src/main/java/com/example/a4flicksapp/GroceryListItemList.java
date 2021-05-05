@@ -52,6 +52,7 @@ public class GroceryListItemList extends AppCompatActivity {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager((new LinearLayoutManager(GroceryListItemList.this)));
 
+        //call getTotal method to get total amount of grocery list and set into textView
         totalAmount = getTotal();
         String totString = String.format("%.2f",totalAmount);
         total_amount_textView.setText(String.valueOf(totString));
