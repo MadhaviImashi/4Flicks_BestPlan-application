@@ -126,11 +126,13 @@
         android:id="@+id/groceryDeleteBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="96dp"
         android:backgroundTint="#FF7F00"
         android:text="@string/grocery_delete_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/groceryEditBtn"
         app:layout_constraintTop_toBottomOf="@+id/textInputQuantity2" />
 
     <ImageView

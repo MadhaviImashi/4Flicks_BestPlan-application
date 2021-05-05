@@ -1,9 +1,11 @@
 package com.example.a4flicksapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,17 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.MyViewHo
         holder.item_name_txt.setText(String.valueOf(item_name.get(position)));
         holder.item_price_txt.setText(String.valueOf(item_price.get(position)));
         holder.quantity_txt.setText(String.valueOf(quantity.get(position)));
+        holder.mainLayoutGrocery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,GroceryListUpdateItem.class);
+                intent.putExtra("id",String.valueOf(item_id.get(position)));
+                intent.putExtra("item_name",String.valueOf(item_name.get(position)));
+                intent.putExtra("price",String.valueOf(item_price.get(position)));
+                intent.putExtra("quantity",String.valueOf(quantity.get(position)));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -44,13 +57,15 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView item_id_txt,item_name_txt,item_price_txt,quantity_txt;
+        TextView item_name_txt,item_price_txt,quantity_txt;
+        LinearLayout mainLayoutGrocery;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             item_name_txt = itemView.findViewById(R.id.item_Name);
             item_price_txt = itemView.findViewById(R.id.item_Price);
             quantity_txt = itemView.findViewById(R.id.item_Quantity);
+            mainLayoutGrocery = itemView.findViewById(R.id.mainLayoutGrocery);
         }
     }
 }
