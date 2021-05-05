@@ -2,10 +2,14 @@ package com.example.a4flicksapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeDbHandler extends SQLiteOpenHelper {
 
@@ -76,4 +80,43 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
     }
+
+    //method to count the number of recipes
+    public int countRecipes(){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+ TABLE_NAME;
+
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor.getCount();
+    }
+
+    //Get all recipes into a list
+    public List<recipeModel> getAllRecipes(){
+        List<recipeModel> recipeModels = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+TABLE_NAME;
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        //values will only be added to list if only there are data
+        if(cursor.moveToFirst()){
+            do {
+                //Create a new recipeModel object
+                recipeModel recipeModel = new recipeModel();
+                //
+                recipeModel.setId(cursor.getInt(0));
+                recipeModel.setRecipe_Name(cursor.getString(1));
+                recipeModel.setRecipe_Ingredients(cursor.getString(2));
+                recipeModel.setRecipe_Directions(cursor.getString(3));
+                recipeModel.setStarted(cursor.getLong(4));
+                recipeModel.setFinished(cursor.getLong(5));
+
+                //recipes = obj.objs
+                recipeModels.add(recipeModel);
+            }
+            while (cursor.moveToNext());
+        }
+        return recipeModels;
+    }
+
 }

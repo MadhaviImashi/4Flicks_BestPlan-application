@@ -3,6 +3,7 @@ package com.example.a4flicksapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,8 @@ public class create_recipe extends AppCompatActivity {
 
                 recipeModel RecipeModel = new recipeModel(Recipe_Name, Recipe_Ingredients, Recipe_Directions, started,0);
                 recipeDbHandler.createRecipe(RecipeModel);
+
+                startActivity(new Intent(context, all_recipes_with_recipes.class));
 
             }
         });
