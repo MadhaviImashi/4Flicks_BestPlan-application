@@ -1,7 +1,9 @@
 package com.example.a4flicksapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -44,13 +46,12 @@ public class GroceryListUpdateItem extends AppCompatActivity {
             }
         });
 
-        //create onclickListener method to call deleteGroceryItem method in DBHandlerGrocery and navigate to grocery list View
+        //create onclickListener method to call confirmDialogBox method
         delete_button=findViewById(R.id.groceryDeleteBtn);
         delete_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
-                myDB.deleteGroceryItem(id);
+                confirmDialogBox();
             }
         });
     }
@@ -79,5 +80,29 @@ public class GroceryListUpdateItem extends AppCompatActivity {
         }else{
             Toast.makeText(this,"No Data",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //create dialog box to confirm item would be deleted or not
+    // if YES call deleteGroceryItem method in DBHandlerGrocery and navigate to grocery list View
+    void confirmDialogBox(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete" + item_name + " ?");
+        builder.setMessage("Are you sure you want to delete " + item_name + " ?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
+                myDB.deleteGroceryItem(id); //if YES delete selected grocery item in database table
+                finish();//redirect to grocery list view
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //if NO don't do anything
+            }
+        });
+        builder.create().show();
     }
 }
