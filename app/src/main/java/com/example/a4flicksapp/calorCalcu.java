@@ -33,6 +33,7 @@ public class calorCalcu extends AppCompatActivity {
         float calvalues2=Float.parseFloat(lu1);
         float calvalues3=Float.parseFloat(din1);
 
+
         float calintake= calvalues+calvalues2+calvalues3;
 
         if(calintake<2000){
