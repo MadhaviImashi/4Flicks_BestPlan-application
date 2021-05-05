@@ -66,31 +66,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editRecipeIngredients" />
 
     <Button
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="286dp"
-        android:text="Add Image"
-        app:backgroundTint="#FF9C0A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDirections" />
-
-    <ImageView
-        android:id="@+id/editRecipeInputImage"
-        android:layout_width="325dp"
-        android:layout_height="213dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <Button
         android:id="@+id/recipeSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRecipeInputImage" />
+        app:layout_constraintTop_toBottomOf="@+id/editDirections" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
