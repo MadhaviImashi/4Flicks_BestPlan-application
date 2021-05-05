@@ -13,14 +13,17 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ToDoList extends AppCompatActivity {
 
     private FloatingActionButton btnAddNewTask;
     private ListView listView;
     private TextView count;
     private ImageButton btnHomeOfList;
-
     Context context;//a context object
+    private List<DailyTaskModel> dailyTasks; //declare a model class type List variable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,16 @@ public class ToDoList extends AppCompatActivity {
         listView = findViewById(R.id.tasksList); //this listView will be needed to set the Adapter
         count = findViewById(R.id.displayCount);
         context = this;
+        dailyTasks = new ArrayList<>(); //now a memory will be allocated to this dailyTasks variable
 
         //create a db handler obj to access count method of it
         DbHandlerDailyTasks handlerObj = new DbHandlerDailyTasks(context);
 
         String showCount = handlerObj.countNoOfTasks() + " Tasks to do"; //call the count method
         count.setText(showCount);
+
+        //call the data retrieving method in dbHandler class and assign data in a list type variable
+        dailyTasks = handlerObj.getAllTasks();
 
         btnAddNewTask.setOnClickListener(new View.OnClickListener() {
             @Override
