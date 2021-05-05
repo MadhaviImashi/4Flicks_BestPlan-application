@@ -36,7 +36,6 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
         // therefor context is a parameter that we have to give definitely everytime when we creating objects from this class
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         //tables will be created inside this class
@@ -148,17 +147,6 @@ public class DbHandlerDailyTasks extends SQLiteOpenHelper {
             Toast.makeText(context, "successfully Updated", Toast.LENGTH_LONG).show();
         db.close();
     }
-
-    /*public DailyTaskModel getSingleTask(int id){
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor cursorObj = db.query(TABLE_NAME, new String[]{ID, TIME, DESCRIPTION, STARTED, FINISHED}, null, null, null, null, null );
-
-        DailyTaskModel modelObj; //new empty model class obj
-        //check whether value is there in the cursor obj
-        if (cursorObj != null){
-            modelObj = new DailyTaskModel();
-        }
-    }*/
 
     public void deleteTask(int id){
 
