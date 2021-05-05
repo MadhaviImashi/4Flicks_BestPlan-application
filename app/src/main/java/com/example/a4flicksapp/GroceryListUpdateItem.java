@@ -13,6 +13,7 @@ public class GroceryListUpdateItem extends AppCompatActivity {
     EditText item_name_input,item_price_input,item_quantity_input;
     String id,item_name,item_price,item_quantity;
     Button edit_button;
+    Button delete_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class GroceryListUpdateItem extends AppCompatActivity {
         //First get data and set data
         getAndSetIntentData();
 
-        //create onclickListener method to navigate to view grocery item UI
+        //create onclickListener method to call updateItemData method and navigate to view grocery list UI
         edit_button=findViewById(R.id.groceryEditBtn);
         edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,16 @@ public class GroceryListUpdateItem extends AppCompatActivity {
 
                 Intent intent = new Intent(GroceryListUpdateItem.this, GroceryListItemList.class);
                 startActivity(intent);
+            }
+        });
+
+        //create onclickListener method to call deleteGroceryItem method in DBHandlerGrocery and navigate to grocery list View
+        delete_button=findViewById(R.id.groceryDeleteBtn);
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
+                myDB.deleteGroceryItem(id);
             }
         });
     }

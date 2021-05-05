@@ -47,7 +47,7 @@ public class GroceryListItemList extends AppCompatActivity {
         textView.setText(String.valueOf(totString));
     }
 
-    @Override //update method
+    @Override //update method (after update the data redirect to grocery list view with updated data)
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1){
