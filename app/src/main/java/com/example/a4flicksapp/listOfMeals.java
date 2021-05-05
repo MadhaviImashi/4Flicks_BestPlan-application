@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,6 +25,7 @@ public class listOfMeals extends AppCompatActivity {
     Context context;
     private DBhandlerMeal dbHandler;
     private List<mealPlan> meals4;
+    private ImageButton homesm2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +39,20 @@ public class listOfMeals extends AppCompatActivity {
         count1=findViewById(R.id.MealCount);
         meals4= new ArrayList<>();
         meals4= dbHandler.getAllMeals();
+        homesm2= findViewById(R.id.mlplhome2);
 
         mealAdapter adapter= new mealAdapter(context,R.layout.singlemeal,meals4);
         listView1.setAdapter(adapter);
 
         int countmeals1 = dbHandler.countmeals();
         count1.setText("You have "+countmeals1+" meals");
+
+        homesm2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context,MainActivity.class));
+            }
+        });
 
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
