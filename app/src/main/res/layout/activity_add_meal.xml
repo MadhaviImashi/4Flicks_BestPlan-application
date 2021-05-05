@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="BestPlan"
+        app:title="Add Meal"
         app:titleMarginStart="30dp"
         app:titleTextColor="#FFFFFF" />
 
