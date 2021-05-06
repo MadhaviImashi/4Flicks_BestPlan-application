@@ -25,6 +25,9 @@ public class bmiCalculator extends AppCompatActivity {
 
     int height, weight;
     double hInMeters;
+    private double BMI;
+    private String BMIval;
+    private double BMIvalue;
     String category;
 
     @Override
@@ -50,7 +53,16 @@ public class bmiCalculator extends AppCompatActivity {
         calculateBMI.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                calculateBMI(v);
+
+                //first assign the values of BMI and CATEGORY by calling the 2 methods
+                double BMIvalue = calculateBMI(v);
+                String category = getWeightCategory(BMIvalue);
+                //display the weight category of the user in the TextView
+                if(BMIvalue == 0){
+                    BMIresult.setText("RESULT");
+                }
+                else
+                    BMIresult.setText("  Your BMI: " + BMIvalue + "\n\n" + category);
             }
         });
 
@@ -62,47 +74,54 @@ public class bmiCalculator extends AppCompatActivity {
         });
     }
 
-    public void calculateBMI(View view){
+    public double  calculateBMI(View view) {
 
         String h = inputH.getText().toString();
         String w = inputW.getText().toString();
         String age = inputAge.getText().toString();
 
         //validate the input fields
-        if(h.length()==0 && w.length()==0){
+        if (h.length() == 0 && w.length() == 0) {
             Toast.makeText(this, "Please enter Height & Weight", Toast.LENGTH_LONG).show();
-        }
-        else if(h.length()==0){
+            return 0;
+        } else if (h.length() == 0) {
             Toast.makeText(this, "Please Enter height", Toast.LENGTH_LONG).show();
-        }
-        else if(w.length()==0){
+            return 0;
+        } else if (w.length() == 0) {
             Toast.makeText(this, "Please Enter Weight", Toast.LENGTH_LONG).show();
-        }
-        else {
+            return 0;
+        } else {
             //convert the user input text type data into number format
             height = Integer.parseInt(h);
             hInMeters = height / 100.0; //convert height into meters
             weight = Integer.parseInt(w);
 
             //calculate BMI value for according to the user input data
-            double BMI = weight / hInMeters;
-            String BMIval = String.format("%.2f", BMI); //round of the BMI value to 2 decimal places
-            double BMIvalue = Double.valueOf(BMIval);
+            this.BMI = weight / hInMeters;
+            this.BMIval = String.format("%.2f", BMI); //round of the BMI value to 2 decimal places
+            this.BMIvalue = Double.valueOf(BMIval);
+
+            return BMIvalue;
+        }
+    }
+
+    public String getWeightCategory(double BMIvalue){
 
             //classify the weight category according to the BMI range
-            if (BMI < 18.5) {
+            if(BMIvalue == 0){
+                category = "";
+            } else if(BMIvalue < 18.5) {
                 category = "Underweight";
-            } else if (BMI < 24.9) {
+            } else if (BMIvalue < 24.9) {
                 category = "Normal Weight";
-            } else if (BMI < 39.9) {
+            } else if (BMIvalue < 39.9) {
                 category = "Overweight";
             } else
                 category = "Morbidly obese";
 
-            //display the weight category of the user
-            BMIresult.setText("  Your BMI: " + BMIvalue + "\n\n" + category);
-        }
+            return category;
     }
+
 
     public void displayFragmentsMain(View view){
 
