@@ -23,11 +23,11 @@ public class bmiCalculator extends AppCompatActivity {
     EditText inputH, inputW, inputAge;
     TextView BMIresult;
 
-    int height, weight;
-    double hInMeters;
-    private double BMI;
+    int weight;
+    double height, hInMeters;
+    private float BMI;
     private String BMIval;
-    private double BMIvalue;
+    private float BMIvalue;
     String category;
 
     @Override
@@ -54,8 +54,11 @@ public class bmiCalculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //first assign the values of BMI and CATEGORY by calling the 2 methods
-                double BMIvalue = calculateBMI(v);
+                //call the 2 classes to get the user input values to h and w
+                String h = takeUserInputHeight(v);
+                String w = takeUserInputWeight(v);
+                //now cal the bmi using h and w and find category
+                float BMIvalue = calculateBmi(h, w);
                 String category = getWeightCategory(BMIvalue);
                 //display the weight category of the user in the TextView
                 if(BMIvalue == 0){
@@ -74,10 +77,20 @@ public class bmiCalculator extends AppCompatActivity {
         });
     }
 
-    public double  calculateBMI(View view) {
+    public String takeUserInputHeight(View view){
+        String height = inputH.getText().toString();
+        return height;
+    }
 
-        String h = inputH.getText().toString();
-        String w = inputW.getText().toString();
+    public String takeUserInputWeight(View view){
+        String weight = inputW.getText().toString();
+        return weight;
+    }
+
+    public float  calculateBmi(String inputHeight, String inputWeight) {
+
+        String h = inputHeight;
+        String w = inputWeight;
         String age = inputAge.getText().toString();
 
         //validate the input fields
@@ -92,36 +105,45 @@ public class bmiCalculator extends AppCompatActivity {
             return 0;
         } else {
             //convert the user input text type data into number format
-            height = Integer.parseInt(h);
-            hInMeters = height / 100.0; //convert height into meters
+            height = Float.valueOf(h);
+            hInMeters = (float) ((float)height / 100.0); //convert height into meters
             weight = Integer.parseInt(w);
 
             //calculate BMI value for according to the user input data
-            this.BMI = weight / hInMeters;
-            this.BMIval = String.format("%.2f", BMI); //round of the BMI value to 2 decimal places
-            this.BMIvalue = Double.valueOf(BMIval);
+            this.BMI = (float) ((float)weight / hInMeters);
+            this.BMIval = String.format("%.1f", BMI); //round of the BMI value to 2 decimal places
+            this.BMIvalue = Float.parseFloat(BMIval);
 
             return BMIvalue;
         }
     }
 
-    public String getWeightCategory(double BMIvalue){
+    public String getWeightCategory(float BMIvalue){
 
-            //classify the weight category according to the BMI range
-            if(BMIvalue == 0){
-                category = "";
-            } else if(BMIvalue < 18.5) {
-                category = "Underweight";
-            } else if (BMIvalue < 24.9) {
-                category = "Normal Weight";
-            } else if (BMIvalue < 39.9) {
-                category = "Overweight";
-            } else
-                category = "Morbidly obese";
+        //classify the weight category according to the BMI range
+        if(BMIvalue == 0){
+            category = "";
+        } else if(BMIvalue < 18.5) {
+            category = "Underweight";
+        } else if (BMIvalue < 24.9) {
+            category = "Normal Weight";
+        } else if (BMIvalue < 39.9) {
+            category = "Overweight";
+        } else
+            category = "Morbidly obese";
 
-            return category;
+        return category;
     }
 
+    //another simple bmi calculator method
+    public float calculateBMI(int weight, float height){
+
+        float hInMeters = (float) ((float)height / 100.0);
+        float bmi = weight / hInMeters;
+        String bmiString = String.format("%.1f", bmi);
+        float BMI = Float.parseFloat(bmiString);
+        return BMI;
+    }
 
     public void displayFragmentsMain(View view){
 
