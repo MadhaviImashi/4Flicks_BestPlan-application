@@ -126,4 +126,28 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    //Get a single recipe
+    public recipeModel getSingleRecipe(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.query(TABLE_NAME, new String[]{ID, RECIPE_NAME, RECIPE_INGREDIENTS, RECIPE_DIRECTIONS, STARTED, FINISHED}, ID + "= ?",new String[]{String.valueOf(id)}, null, null, null);
+        recipeModel recipeModel;
+
+        if(cursor != null){
+            cursor.moveToFirst();
+            recipeModel = new recipeModel(
+
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getLong(4),
+                    cursor.getLong(5)
+
+            );
+            return recipeModel;
+        }
+
+        return null;
+    }
+
 }

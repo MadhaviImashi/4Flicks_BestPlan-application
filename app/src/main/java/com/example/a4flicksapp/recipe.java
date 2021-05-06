@@ -2,6 +2,7 @@ package com.example.a4flicksapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,9 @@ public class recipe extends AppCompatActivity {
     private TextView StepsOfRecipe;
     private Button UpdateRecipeBtn;
     private Button DeleteRecipeBtn;
+    private RecipeDbHandler recipeDbHandler;
+    private Context context;
+    private Long updatedDate;
 
 
     @Override
@@ -23,11 +27,21 @@ public class recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
+        context = this;
+        recipeDbHandler = new RecipeDbHandler(context);
+
         NameOfRecipe = findViewById(R.id.RecipeName);
         IngredientsOfRecipe = findViewById(R.id.ingredientsList);
         StepsOfRecipe = findViewById(R.id.Steps);
         UpdateRecipeBtn = findViewById(R.id.Updatebtn);
         DeleteRecipeBtn = findViewById(R.id.Deletebtn);
+
+        final String id = getIntent().getStringExtra("id");
+        recipeModel recipeModel = recipeDbHandler.getSingleRecipe(Integer.parseInt(id));
+
+        NameOfRecipe.setText(recipeModel.getRecipe_Name());
+        IngredientsOfRecipe.setText(recipeModel.getRecipe_Ingredients());
+        StepsOfRecipe.setText(recipeModel.getRecipe_Directions());
     }
 
     public void displayUpdateActivity(View view){

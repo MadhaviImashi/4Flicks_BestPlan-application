@@ -77,7 +77,9 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        startActivity(new Intent(context,update_recipe.class));
+                        Intent intent = new Intent(context, update_recipe.class);
+                        intent.putExtra("id", String.valueOf(recipeModel.getId()));
+                        startActivity(intent);
 
                     }
                 });
@@ -85,6 +87,10 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                 builder.setNeutralButton("View", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(context, recipe.class);
+                        intent.putExtra("id", String.valueOf(recipeModel.getId()));
+                        startActivity(intent);
 
                     }
                 });
