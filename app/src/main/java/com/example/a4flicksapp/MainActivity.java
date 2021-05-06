@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button btnNavBMI;
+    Button btnGroceryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,18 +19,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnNavBMI = findViewById(R.id.btnNavBMI);
+        btnGroceryList = findViewById(R.id.btnGrocery);
+
+        //create onclick method to navigate to grocery list welcome view
+        btnGroceryList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,GroceryListHome.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void displayBMIactivity(View view){
 
         Intent intent = new Intent(this, bmiCalculator.class);
 
-        startActivity(intent);
-    }
-
-    //create onclick method to link grocery list button
-    public void goToGroceryListHome(View view) {
-        Intent intent = new Intent(this, GroceryListHome.class);
         startActivity(intent);
     }
 }
