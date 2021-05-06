@@ -14,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class GroceryListHome extends AppCompatActivity {
     FloatingActionButton next_page_btn;
     ImageView home_image_view;
+    TextView display_list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class GroceryListHome extends AppCompatActivity {
 
         next_page_btn=findViewById(R.id.btnnextpage);
         home_image_view=findViewById(R.id.TbHomeBtn);
+        display_list=findViewById(R.id.groceryListText2);
 
         //create onclickListener method to navigate to my grocery list when click on floating action button
         next_page_btn.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +42,14 @@ public class GroceryListHome extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
 
-    //create onclick method to navigate to my grocery list when click on text view
-    public void displayGroceryListItemList(View view) {
-        Intent intent = new Intent(this, GroceryListItemList.class);
-        startActivity(intent);
+        ////create onclickListener method to navigate to my grocery list when click on text view
+        display_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(GroceryListHome.this,GroceryListItemList.class);
+                startActivity(intent);
+            }
+        });
     }
-
 }

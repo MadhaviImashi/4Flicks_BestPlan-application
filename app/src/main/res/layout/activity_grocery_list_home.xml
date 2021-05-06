@@ -59,7 +59,6 @@
         android:id="@+id/groceryListText2"
         android:layout_width="412dp"
         android:layout_height="wrap_content"
-        android:onClick="displayGroceryListItemList"
         android:text="@string/grocery_list_text2"
         android:textAlignment="center"
         android:textColor="#F6558C"
