@@ -150,4 +150,21 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
         return null;
     }
 
+    //Update a recipe
+    public int updateRecipe(recipeModel RecipeModel){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(RECIPE_NAME, RecipeModel.getRecipe_Name());
+        contentValues.put(RECIPE_INGREDIENTS, RecipeModel.getRecipe_Ingredients());
+        contentValues.put(RECIPE_DIRECTIONS, RecipeModel.getRecipe_Directions());
+        contentValues.put(STARTED, RecipeModel.getStarted());
+        contentValues.put(FINISHED, RecipeModel.getFinished());
+
+        int status = db.update(TABLE_NAME, contentValues, ID +" =?", new String[]{String.valueOf(RecipeModel.getId())});
+        db.close();
+        return status;
+
+    }
+
 }
