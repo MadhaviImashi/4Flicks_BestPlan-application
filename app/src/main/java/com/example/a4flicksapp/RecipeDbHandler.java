@@ -119,4 +119,11 @@ public class RecipeDbHandler extends SQLiteOpenHelper {
         return recipeModels;
     }
 
+    //Delete recipes
+    public void deleteRecipes(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME, ID +" =?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
 }

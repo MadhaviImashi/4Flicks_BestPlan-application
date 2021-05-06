@@ -26,7 +26,7 @@ public class recipeAdapter extends ArrayAdapter<recipeModel> {
 
     }
 
-    //displays one recipe in recipe list
+    //displays one recipe name in recipe list
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
