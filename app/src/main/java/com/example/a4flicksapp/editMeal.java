@@ -41,6 +41,7 @@ public class editMeal extends AppCompatActivity {
         editm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //validate if all the required inputs are given
 
                 if (TextUtils.isEmpty(day3.getText())) {
                     day3.setError("Enter Day");

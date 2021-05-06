@@ -68,7 +68,7 @@ public class DBhandlerMeal extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
     }
-
+    //counting number of meal function
     public int countmeals() {
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME;
@@ -76,7 +76,7 @@ public class DBhandlerMeal extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
         return cursor.getCount();
     }
-
+    //list of meal function
     public List<mealPlan> getAllMeals() {
 
         List<mealPlan> meals3 = new ArrayList();
@@ -105,7 +105,7 @@ public class DBhandlerMeal extends SQLiteOpenHelper {
         return meals3;
     }
 
-    // Delete item
+    // Delete meal function
     public void deleteMeal(int id1) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_NAME, "id1 =?", new String[]{String.valueOf(id1)});
@@ -137,7 +137,7 @@ public class DBhandlerMeal extends SQLiteOpenHelper {
         }
         return null;
     }
-
+    //update meal function
     public int updateSingleMeal(mealPlan meals1){
         SQLiteDatabase db = getWritableDatabase();
 

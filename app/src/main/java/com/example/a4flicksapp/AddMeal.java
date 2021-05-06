@@ -33,6 +33,7 @@ public class AddMeal extends AppCompatActivity {
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //validate if all the required inputs are given
                 if (TextUtils.isEmpty(day1.getText())) {
                     day1.setError("Enter Day");
                     day1.requestFocus();

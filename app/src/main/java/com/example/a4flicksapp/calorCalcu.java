@@ -17,6 +17,7 @@ public class calorCalcu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calor_calcu);
+        //assign variables
 
         calbr=findViewById(R.id.calBre);
         callu=findViewById(R.id.calLun);
