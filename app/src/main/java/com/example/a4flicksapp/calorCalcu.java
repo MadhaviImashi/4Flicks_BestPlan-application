@@ -33,8 +33,10 @@ public class calorCalcu extends AppCompatActivity {
         float calvalues2=Float.parseFloat(lu1);
         float calvalues3=Float.parseFloat(din1);
 
+        float adds= addcal(calvalues,calvalues2,calvalues3);
+        float calintake=adds;
 
-        float calintake= calvalues+calvalues2+calvalues3;
+
 
         if(calintake<2000){
             calresult="Your Calorie Intake Should Be Higher";
@@ -50,4 +52,6 @@ public class calorCalcu extends AppCompatActivity {
 
 
     }
+
+    protected float addcal(float x1,float x2,float x3){ return  x1+x2+x3;}
 }
