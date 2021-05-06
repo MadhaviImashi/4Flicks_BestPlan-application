@@ -4,23 +4,26 @@
     android:id="@+id/custom_toast_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#55BBC8"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/custom_toast_image"
-        android:layout_width="157dp"
-        android:layout_height="66dp"
+        android:layout_width="343dp"
+        android:layout_height="421dp"
         android:contentDescription="Hello world"
-        android:src="@drawable/ic_baseline_alarm_24" />
+        app:srcCompat="@drawable/women_body_measuring" />
 
     <TextView
         android:id="@+id/custom_toast_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="344dp"
+        android:layout_height="119dp"
         android:contentDescription="To"
+        android:paddingLeft="28dp"
         android:text="Welcome to BestPlan"
-        android:textColor="#1866A5"
-        android:textSize="18sp" />
+        android:textColor="#DC608A"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+
 
 </LinearLayout>
