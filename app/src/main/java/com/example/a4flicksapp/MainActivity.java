@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         //creating the Toast object
         Toast toast = new Toast(getApplicationContext());
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
         toast.setView(layout);//setting the view of custom toast layout
         toast.show();
     }
 
     public void displayBMIactivity(View view){
-á
+
         Intent intent = new Intent(this, bmiCalculator.class);
 
         startActivity(intent);
