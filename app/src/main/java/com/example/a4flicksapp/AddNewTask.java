@@ -67,7 +67,7 @@ public class AddNewTask extends AppCompatActivity implements TimePickerDialog.On
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
         //convert the minutes into a 2 digit number
-        if (minute==1 || minute==2 || minute==3 || minute==4 ||minute==5 || minute==6 || minute==7 ||minute==8 || minute==9){
+        if (minute==0 || minute==1 || minute==2 || minute==3 || minute==4 ||minute==5 || minute==6 || minute==7 ||minute==8 || minute==9){
             String mins = String.valueOf(minute);
             timeInMins = "0"+ mins;
         }

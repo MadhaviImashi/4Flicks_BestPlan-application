@@ -9,15 +9,15 @@
 
     <ImageView
         android:id="@+id/custom_toast_image"
-        android:layout_width="343dp"
-        android:layout_height="421dp"
+        android:layout_width="317dp"
+        android:layout_height="369dp"
         android:contentDescription="Hello world"
         app:srcCompat="@drawable/women_body_measuring" />
 
     <TextView
         android:id="@+id/custom_toast_message"
-        android:layout_width="344dp"
-        android:layout_height="119dp"
+        android:layout_width="317dp"
+        android:layout_height="163dp"
         android:contentDescription="To"
         android:paddingLeft="28dp"
         android:text="Welcome to BestPlan"
