@@ -40,7 +40,7 @@ public class AddMeal extends AppCompatActivity {
 
                 mealPlan meals1= new mealPlan(userday1,userbreakfirst1,userlunch1,userdinner1,started,0);
                 dbHandler.addMealplan(meals1);
-                Toast.makeText(AddMeal.this, "Meal Plan Added", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddMeal.this, "Meal Plan Added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(context,listOfMeals.class));
 
 
