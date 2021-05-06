@@ -79,7 +79,7 @@ public class bmiCalculator extends AppCompatActivity {
         });
     }
 
-    public void calculateBMI(View view){
+    /*public void calculateBMI(View view){
 
         String h = inputH.getText().toString();
         String w = inputW.getText().toString();
@@ -110,7 +110,46 @@ public class bmiCalculator extends AppCompatActivity {
 
         //display the weight category of the user
         BMIresult.setText( "  Your BMI: "+ BMIvalue + "\n\n" + category);
+    }*/
+    public void calculateBMI(View view){
 
+        String h = inputH.getText().toString();
+        String w = inputW.getText().toString();
+        String age = inputAge.getText().toString();
+
+        if(h.length()==0 && w.length()==0){
+            Toast.makeText(this, "Please enter Height & Weight", Toast.LENGTH_LONG).show();
+        }
+        else if(h.length()==0){
+            Toast.makeText(this, "Please Enter height", Toast.LENGTH_LONG).show();
+        }
+        else if(w.length()==0){
+            Toast.makeText(this, "Please Enter Weight", Toast.LENGTH_LONG).show();
+        }
+        else {
+            //convert the user input text type data into number format
+            height = Integer.parseInt(h);
+            hInMeters = height / 100.0; //convert height into meters
+            weight = Integer.parseInt(w);
+
+            //calculate BMI value for according to the user input data
+            double BMI = weight / hInMeters;
+            String BMIval = String.format("%.2f", BMI); //round of the BMI value to 2 decimal places
+            double BMIvalue = Double.valueOf(BMIval);
+
+            //classify the weight category according to the BMI range
+            if (BMI < 18.5) {
+                category = "Underweight";
+            } else if (BMI < 24.9) {
+                category = "Normal Weight";
+            } else if (BMI < 39.9) {
+                category = "Overweight";
+            } else
+                category = "Morbidly obese";
+
+            //display the weight category of the user
+            BMIresult.setText("  Your BMI: " + BMIvalue + "\n\n" + category);
+        }
     }
 
     public void displayFragmentsMain(View view){
