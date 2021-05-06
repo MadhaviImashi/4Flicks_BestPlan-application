@@ -46,7 +46,7 @@
         app:backgroundTint="@color/homeNavBtn"
         app:layout_constraintEnd_toStartOf="@+id/cal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/mliv1" />
 
     <Button
         android:id="@+id/cal"
@@ -60,10 +60,10 @@
         app:backgroundTint="@color/homeNavBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/planner"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/mliv1" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mltv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
@@ -75,13 +75,13 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/mliv1"
         android:layout_width="224dp"
         android:layout_height="262dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/mltv"
         app:srcCompat="@drawable/ml4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
