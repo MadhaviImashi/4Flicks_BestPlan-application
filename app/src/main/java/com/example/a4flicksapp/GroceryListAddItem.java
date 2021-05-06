@@ -22,7 +22,7 @@ public class GroceryListAddItem extends AppCompatActivity {
         quantity_input = findViewById((R.id.textInputQuantity));
         add_grocery_item = findViewById((R.id.groceryAddBtn));
 
-        //create onclick method to navigate to your grocery list
+        //create onclickListener method to call addGroceryItem method in DBHelperGrocery class and navigate to your grocery list
         add_grocery_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +35,7 @@ public class GroceryListAddItem extends AppCompatActivity {
             }
         });
     }
+    //create onclickListener method to navigate to your grocery list when click on back icon
     public void displayMyGroceryList(View view){
         Intent intent = new Intent(this,GroceryListItemList.class);
         startActivity(intent);

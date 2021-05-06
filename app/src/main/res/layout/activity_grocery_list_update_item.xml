@@ -22,7 +22,7 @@
         app:titleTextColor="@color/white" />
 
     <ImageButton
-        android:id="@+id/AddBtnBack"
+        android:id="@+id/UpdateBtnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#FF9C0A"
@@ -57,6 +57,7 @@
         android:layout_width="209dp"
         android:layout_height="47dp"
         android:layout_marginEnd="32dp"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/groceryPrice2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/groceryPrice2" />
@@ -66,6 +67,7 @@
         android:layout_width="209dp"
         android:layout_height="47dp"
         android:layout_marginEnd="32dp"
+        android:inputType="number"
         app:layout_constraintBaseline_toBaselineOf="@+id/groceryQuantity2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/groceryQuantity2" />

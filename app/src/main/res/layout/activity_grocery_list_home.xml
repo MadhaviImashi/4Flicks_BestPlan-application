@@ -25,7 +25,6 @@
         android:layout_width="30dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:onClick="displayAppHome"
         app:layout_constraintBottom_toBottomOf="@+id/tbgrocery"
         app:layout_constraintStart_toStartOf="@+id/tbgrocery"
         app:layout_constraintTop_toTopOf="@+id/tbgrocery"

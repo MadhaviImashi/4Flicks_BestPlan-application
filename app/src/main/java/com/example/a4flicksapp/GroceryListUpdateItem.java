@@ -87,7 +87,7 @@ public class GroceryListUpdateItem extends AppCompatActivity {
     void confirmDialogBox(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete " + item_name + " ?");
-        builder.setMessage("Are you sure you want to delete " + item_name + " ?");
+        builder.setMessage("Are you sure you want to delete this grocery item?");
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
