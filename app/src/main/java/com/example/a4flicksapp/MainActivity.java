@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void displayBMIactivity(View view){
-
+á
         Intent intent = new Intent(this, bmiCalculator.class);
 
         startActivity(intent);

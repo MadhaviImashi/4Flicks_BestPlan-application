@@ -12,13 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class bmiCalculator extends AppCompatActivity {
 
     Button btnFragmentMainNav, calculateBMI;
-    ImageButton btnHome;
+    ImageView btnHome;
     EditText inputH, inputW, inputAge;
     TextView BMIresult;
 
