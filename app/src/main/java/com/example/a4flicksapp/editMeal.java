@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class editMeal extends AppCompatActivity {
 
@@ -48,6 +49,7 @@ public class editMeal extends AppCompatActivity {
                 mealPlan meal8= new mealPlan(Integer.parseInt(id1),usday,usbr,uslu,usdin,updateDate1,0);
                 int state = dbHandler.updateSingleMeal(meal8);
                 System.out.println(state);
+                Toast.makeText(editMeal.this, "Meal Plan Updated", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(context,listOfMeals.class));
 
             }
