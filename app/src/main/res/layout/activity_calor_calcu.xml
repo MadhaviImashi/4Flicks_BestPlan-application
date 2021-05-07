@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".calorCalcu">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9C0A"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="center"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Calorie Calculator"
+        app:titleMarginStart="30dp"
+        app:titleTextColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/calWel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:text="@string/Tvcalocal"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+    <EditText
+        android:id="@+id/calBre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="39dp"
+        android:ems="10"
+
+        android:hint="@string/calIn"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/calLun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewml1"
+        app:layout_constraintTop_toBottomOf="@+id/calWel" />
+
+    <EditText
+        android:id="@+id/calLun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="41dp"
+        android:ems="10"
+        android:hint="@string/calIn"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewml2"
+        app:layout_constraintTop_toBottomOf="@+id/calBre" />
+
+    <EditText
+        android:id="@+id/calDin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="41dp"
+        android:ems="10"
+        android:hint="@string/calIn"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewml3"
+        app:layout_constraintTop_toBottomOf="@+id/calLun" />
+
+    <TextView
+        android:id="@+id/textViewml1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/br"
+        android:textColor="#1E1D1D"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calWel" />
+
+    <TextView
+        android:id="@+id/textViewml2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/lu"
+        android:textColor="#201E1E"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewml1" />
+
+    <TextView
+        android:id="@+id/textViewml3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/di"
+        android:textColor="#1B1919"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewml2" />
+
+    <Button
+        android:id="@+id/calCalori"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:onClick="calorieCalcu"
+        android:text="@string/btnCalCalo"
+        app:backgroundTint="@color/homeNavBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calDin" />
+
+    <TextView
+        android:id="@+id/calResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="68dp"
+        android:text="result"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calCalori" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="121dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calCalori"
+        app:layout_constraintTop_toBottomOf="@+id/calCalori"
+        app:srcCompat="@drawable/yoga" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="textEnd"
-    tools:context=".MainActivity">
+    tools:context=".bmiCalculator">
 
     <TextView
         android:id="@+id/textView8"
@@ -55,20 +55,6 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FF9C0A"
-        android:minHeight="?attr/actionBarSize"
-        android:textAlignment="center"
-        android:theme="?attr/actionBarTheme"
-        app:title="@string/title1"
-        app:titleMarginStart="70dp"
-        app:titleTextColor="#FFFFFF"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="-2dp" />
-
     <!--<RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
@@ -101,8 +87,22 @@
 
     </RadioGroup>-->
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9C0A"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="center"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/title1"
+        app:titleMarginStart="70dp"
+        app:titleTextColor="#FFFFFF"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-2dp" />
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/calculateBMI"
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
@@ -127,7 +127,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/age"
         android:layout_width="106dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -163,7 +163,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/h"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -175,7 +175,7 @@
         android:inputType="numberDecimal" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal2"
+        android:id="@+id/w"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -202,15 +202,17 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="173dp"
-        android:layout_height="228dp"
+        android:layout_height="211dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="59dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="461dp"
         app:srcCompat="@drawable/child_body_measure" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/tvBMIresult"
         android:layout_width="181dp"
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
@@ -221,26 +223,29 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
+    <ImageView
+        android:id="@+id/homeButton"
+        android:layout_width="64dp"
+        android:layout_height="47dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="12dp"
-        android:layout_marginEnd="359dp"
-        android:layout_marginBottom="690dp"
-        app:srcCompat="@drawable/screenshot_2" />
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="335dp"
+        android:layout_marginBottom="670dp"
+        app:srcCompat="@drawable/home_btn_bmi" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnFragmentMainNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="33dp"
+        android:onClick="displayFragmentsMain"
         android:text="@string/btnDailyFitnessPlan"
         android:textColor="#F14747"
         app:backgroundTint="#FFFFFF" />
