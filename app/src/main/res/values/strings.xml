@@ -52,6 +52,12 @@
     <string name="timeHint">Time</string>
     <string name="taskDescriptionHint">Task description</string>
     <string name="tvTime">Time</string>
+
+    <!--strings of Charmie's activities-->
+    <string name="ToolBarTitle1">All Recipes</string>
+    <string name="ToolBarTitle2">Create a Recipe</string>
+    <string name="ToolBarTitle3">Edit Recipe</string>
+    <string name="ToolBarTitle4">Recipe</string>
     <string name="tvWelcomeMeal">Welcome to Meal Planner</string>
     <string name="btnAddMealPlan">Add Meal Plan</string>
     <string name="btnCalorM">Calorie Calculator</string>
