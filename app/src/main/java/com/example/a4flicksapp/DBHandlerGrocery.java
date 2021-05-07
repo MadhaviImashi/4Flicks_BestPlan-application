@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 public class DBHandlerGrocery extends SQLiteOpenHelper {
     private Context context;
-    private static final String DATABASE_NAME="BestPlanDatabase.db";
+    private static final String DATABASE_NAME="BestPlanDatabaseGrocery.db";
     private static final int DATABASE_VERSION=1;
 
     private static final String TABLE_NAME="grocery";
@@ -38,7 +38,9 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Drop older grocery table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        //create table again
         onCreate(db);
     }
 
@@ -57,6 +59,7 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
         else{
             Toast.makeText(context,"Successfully Added",Toast.LENGTH_SHORT).show();
         }
+        db.close();
     }
 
     //read all data stored in SQLite database
@@ -86,6 +89,7 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context,"Successfully Updated",Toast.LENGTH_SHORT).show();
         }
+        db.close();
     }
 
     //delete grocery item method
@@ -97,11 +101,13 @@ public class DBHandlerGrocery extends SQLiteOpenHelper {
         }else{
             Toast.makeText(context,"Successfully Deleted",Toast.LENGTH_SHORT).show();
         }
+        db.close();
     }
 
     //delete all the grocery list item method
     void deleteAllGroceryItems(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NAME);
+        db.close();
     }
 }
