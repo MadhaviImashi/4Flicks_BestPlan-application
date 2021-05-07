@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,16 +47,37 @@ public class update_recipe extends AppCompatActivity {
         RecipeUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String EditedRecipeName = EditRecipeName.getText().toString();
-                String EditedRecipeIngredients = EditRecipeIngredients.getText().toString();
-                String EditedDirections = EditDirections.getText().toString();
-                updatedDate = System.currentTimeMillis();
 
-                recipeModel recipeModel = new recipeModel(Integer.parseInt(id), EditedRecipeName, EditedRecipeIngredients, EditedDirections, updatedDate, 0);
-                int state = recipeDbHandler.updateRecipe(recipeModel);
-                Toast.makeText(update_recipe.this, "Updated the Recipe", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(context, all_recipes_with_recipes.class));
+                //Make sure that Recipe Name field is not empty(Validation)
+                if (TextUtils.isEmpty(EditRecipeName.getText())){
+                    EditRecipeName.setError("Recipe Name is Required");
+                    EditRecipeName.requestFocus();
+                }
 
+                //Make sure that Recipe Ingredients field is not empty(Validation)
+                if (TextUtils.isEmpty(EditRecipeIngredients.getText())){
+                    EditRecipeIngredients.setError("Recipe Ingredients are Required");
+                    EditRecipeIngredients.requestFocus();
+                }
+                //Make sure that Recipe Directions field is not empty(Validation)
+                if (TextUtils.isEmpty(EditDirections.getText())){
+                    EditDirections.setError("Recipe Directions are Required");
+                    EditDirections.requestFocus();
+                }
+
+                else {
+
+                    String EditedRecipeName = EditRecipeName.getText().toString();
+                    String EditedRecipeIngredients = EditRecipeIngredients.getText().toString();
+                    String EditedDirections = EditDirections.getText().toString();
+                    updatedDate = System.currentTimeMillis();
+
+                    recipeModel recipeModel = new recipeModel(Integer.parseInt(id), EditedRecipeName, EditedRecipeIngredients, EditedDirections, updatedDate, 0);
+                    int state = recipeDbHandler.updateRecipe(recipeModel);
+                    Toast.makeText(update_recipe.this, "Updated the Recipe", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, all_recipes_with_recipes.class));
+
+                }
             }
         });
     }
