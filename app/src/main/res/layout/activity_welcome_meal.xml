@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".welcomeMeal">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF9C0A"
+        android:minHeight="?attr/actionBarSize"
+        android:textAlignment="center"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="    Welcome To Meal Planner"
+        app:titleMarginStart="30dp"
+        app:titleTextColor="#FFFFFF" />
+    <ImageButton
+        android:id="@+id/mlplhome"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="27dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar3"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="@+id/toolbar3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/screenshot_2" />
+
+    <Button
+        android:id="@+id/planner"
+        android:layout_width="153dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="34dp"
+        android:onClick="displayaddmeal2"
+        android:text="@string/btnAddMealPlan"
+        app:backgroundTint="@color/homeNavBtn"
+        app:layout_constraintEnd_toStartOf="@+id/cal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mliv1" />
+
+    <Button
+        android:id="@+id/cal"
+        android:layout_width="155dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="35dp"
+        android:onClick="displaycalorie"
+        android:text="@string/btnCalorM"
+        app:backgroundTint="@color/homeNavBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/planner"
+        app:layout_constraintTop_toBottomOf="@+id/mliv1" />
+
+    <TextView
+        android:id="@+id/mltv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/tvWelcomeMeal"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+    <ImageView
+        android:id="@+id/mliv1"
+        android:layout_width="224dp"
+        android:layout_height="262dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mltv"
+        app:srcCompat="@drawable/ml4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

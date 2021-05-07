@@ -58,4 +58,20 @@
     <string name="ToolBarTitle2">Create a Recipe</string>
     <string name="ToolBarTitle3">Edit Recipe</string>
     <string name="ToolBarTitle4">Recipe</string>
+    <string name="tvWelcomeMeal">Welcome to Meal Planner</string>
+    <string name="btnAddMealPlan">Add Meal Plan</string>
+    <string name="btnCalorM">Calorie Calculator</string>
+    <string name="hintenday">Enter Day</string>
+    <string name="hintEnBr">Enter Breakfast</string>
+    <string name="hintEnLu">Enter Lunch</string>
+    <string name="hintEnDin">Enter Dinner</string>
+    <string name="TvUpDte">Update Day</string>
+    <string name="TvUpBr">Update Breakfast</string>
+    <string name="TvUpLu">Update Lunch</string>
+    <string name="TvUpDin">Update Dinner</string>
+    <string name="btnUpMealP">Update Meal Plan</string>
+    <string name="TvUpMlPl">Update Meal Plan</string>
+    <string name="btnAdmeal">Add Meal</string>
+    <string name="Tvcalocal">Calorie Calculator</string>
+    <string name="btnCalCalo">Calculate</string>
 </resources>
