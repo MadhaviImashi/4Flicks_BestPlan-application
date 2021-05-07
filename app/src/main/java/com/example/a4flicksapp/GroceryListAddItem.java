@@ -33,12 +33,12 @@ public class GroceryListAddItem extends AppCompatActivity {
                     name_input.requestFocus();
                 }
                 //validate item price text view is not empty
-                if(TextUtils.isEmpty(price_input.getText().toString())){
+                else if(TextUtils.isEmpty(price_input.getText().toString())){
                     price_input.setError("Price can not be empty");
                     price_input.requestFocus();
                 }
                 //validate item quantity text view is not empty
-                if(TextUtils.isEmpty(quantity_input.getText().toString())){
+                else if(TextUtils.isEmpty(quantity_input.getText().toString())){
                     quantity_input.setError("Quantity can not be empty");
                     quantity_input.requestFocus();
                 }else {
