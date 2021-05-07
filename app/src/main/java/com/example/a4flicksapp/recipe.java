@@ -15,8 +15,6 @@ public class recipe extends AppCompatActivity {
     private TextView NameOfRecipe;
     private TextView IngredientsOfRecipe;
     private TextView StepsOfRecipe;
-    private Button UpdateRecipeBtn;
-    private Button DeleteRecipeBtn;
     private RecipeDbHandler recipeDbHandler;
     private Context context;
     private Long updatedDate;
@@ -33,8 +31,6 @@ public class recipe extends AppCompatActivity {
         NameOfRecipe = findViewById(R.id.RecipeName);
         IngredientsOfRecipe = findViewById(R.id.ingredientsList);
         StepsOfRecipe = findViewById(R.id.Steps);
-        UpdateRecipeBtn = findViewById(R.id.Updatebtn);
-        DeleteRecipeBtn = findViewById(R.id.Deletebtn);
 
         final String id = getIntent().getStringExtra("id");
         recipeModel recipeModel = recipeDbHandler.getSingleRecipe(Integer.parseInt(id));
