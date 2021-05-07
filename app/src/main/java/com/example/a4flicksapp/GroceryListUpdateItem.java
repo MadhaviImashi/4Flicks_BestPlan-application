@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,15 +35,31 @@ public class GroceryListUpdateItem extends AppCompatActivity {
         edit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //after call getAndSetIntentData update database
-                DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
-                item_name = item_name_input.getText().toString().trim();
-                item_price = item_price_input.getText().toString().trim();
-                item_quantity = item_quantity_input.getText().toString().trim();
-                myDB.updateItemData(id,item_name,item_price,item_quantity);
+                //validate item name text view is not empty
+                if(TextUtils.isEmpty(item_name_input.getText().toString())){
+                    item_name_input.setError("Item Name can not be empty");
+                    item_name_input.requestFocus();
+                }
+                //validate item price text view is not empty
+                else if(TextUtils.isEmpty(item_price_input.getText().toString())){
+                    item_price_input.setError("Price can not be empty");
+                    item_price_input.requestFocus();
+                }
+                //validate item quantity text view is not empty
+                else if(TextUtils.isEmpty(item_quantity_input.getText().toString())){
+                    item_quantity_input.setError("Quantity can not be empty");
+                    item_quantity_input.requestFocus();
+                }else {
+                    //after call getAndSetIntentData update database
+                    DBHandlerGrocery myDB = new DBHandlerGrocery(GroceryListUpdateItem.this);
+                    item_name = item_name_input.getText().toString().trim();
+                    item_price = item_price_input.getText().toString().trim();
+                    item_quantity = item_quantity_input.getText().toString().trim();
+                    myDB.updateItemData(id, item_name, item_price, item_quantity);
 
-                Intent intent = new Intent(GroceryListUpdateItem.this, GroceryListItemList.class);
-                startActivity(intent);
+                    Intent intent = new Intent(GroceryListUpdateItem.this, GroceryListItemList.class);
+                    startActivity(intent);
+                }
             }
         });
 
