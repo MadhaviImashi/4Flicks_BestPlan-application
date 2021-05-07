@@ -17,7 +17,6 @@
         <activity android:name=".update_recipe" />
         <activity android:name=".create_recipe" />
         <activity android:name=".all_recipes_with_recipes" />
-        <activity android:name=".all_recipes_without_any_recipes" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
