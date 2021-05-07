@@ -87,9 +87,9 @@ public class GroceryListItemList extends AppCompatActivity {
         }
     }
 
-    //create onclick method to navigate to grocery list home view
+    //create onclick method to navigate to home page view
     public void displayGroceryListHome(View view) {
-        Intent intent = new Intent(this, GroceryListHome.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

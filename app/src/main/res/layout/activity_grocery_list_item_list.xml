@@ -33,17 +33,16 @@
         app:titleMarginStart="60dp"
         app:titleTextColor="@color/white" />
 
-    <ImageButton
-        android:id="@+id/listBtnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FF9C0A"
+    <ImageView
+        android:id="@+id/TbHomeBtn2"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
         android:onClick="displayGroceryListHome"
-        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/tbListGrocery"
         app:layout_constraintStart_toStartOf="@+id/tbListGrocery"
         app:layout_constraintTop_toTopOf="@+id/tbListGrocery"
-        app:srcCompat="?attr/homeAsUpIndicator" />
+        app:srcCompat="@drawable/ic_baseline_home_24" />
 
     <TextView
         android:id="@+id/groceryTotalView"
