@@ -44,4 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void displayAllRecipesWithRecipes(View view){
+        Intent intent = new Intent(this, all_recipes_with_recipes.class);
+
+        startActivity(intent);
+    }
 }
