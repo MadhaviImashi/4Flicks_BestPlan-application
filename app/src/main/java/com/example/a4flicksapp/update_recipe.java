@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -52,6 +53,7 @@ public class update_recipe extends AppCompatActivity {
 
                 recipeModel recipeModel = new recipeModel(Integer.parseInt(id), EditedRecipeName, EditedRecipeIngredients, EditedDirections, updatedDate, 0);
                 int state = recipeDbHandler.updateRecipe(recipeModel);
+                Toast.makeText(update_recipe.this, "Updated the Recipe", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(context, all_recipes_with_recipes.class));
 
             }

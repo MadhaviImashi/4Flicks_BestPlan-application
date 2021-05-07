@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -45,6 +46,7 @@ public class create_recipe extends AppCompatActivity {
                 recipeModel RecipeModel = new recipeModel(Recipe_Name, Recipe_Ingredients, Recipe_Directions, started,0);
                 recipeDbHandler.createRecipe(RecipeModel);
 
+                Toast.makeText(create_recipe.this, "Recipe Added", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(context, all_recipes_with_recipes.class));
 
             }

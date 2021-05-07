@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +69,7 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         recipeDbHandler.deleteRecipes(recipeModel.getId());
+                        Toast.makeText(all_recipes_with_recipes.this, "Deleted the Recipe", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(context, all_recipes_with_recipes.class));
 
                     }
