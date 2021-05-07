@@ -73,4 +73,8 @@
     <string name="grocery_delete_btn">DELETE</string>
     <string name="grocery_list_title4">Grocery Item</string>
     <string name="grocery_list_text_data">No Items, Start Adding Products</string>
+    <string name="grocery_update_hint1">Item Name</string>
+    <string name="grocery_update_hint2">Item Price</string>
+    <string name="grocery_update_hint3">Item Quantity</string>
+
 </resources>
