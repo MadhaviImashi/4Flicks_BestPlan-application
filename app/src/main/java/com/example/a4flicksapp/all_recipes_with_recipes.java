@@ -24,6 +24,7 @@ public class all_recipes_with_recipes extends AppCompatActivity {
     private ImageButton AddRecipe;
     private ListView RecipeList;
     private TextView NoOfRecipes;
+    private ImageButton Home;
     Context context;
     private RecipeDbHandler recipeDbHandler;
     private List<recipeModel> recipeModels;
@@ -37,6 +38,7 @@ public class all_recipes_with_recipes extends AppCompatActivity {
         AddRecipe = findViewById(R.id.addRecipeBtn);
         RecipeList = findViewById(R.id.recipeList);
         NoOfRecipes = findViewById(R.id.noOfRecipes);
+        Home = findViewById(R.id.home);
         context = this;
         recipeModels = new ArrayList<>();
 
@@ -49,6 +51,13 @@ public class all_recipes_with_recipes extends AppCompatActivity {
         int countRecipes = recipeDbHandler.countRecipes();
         NoOfRecipes.setText("You have "+countRecipes+" Recipes");
 
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, MainActivity.class));
+            }
+        });
+
         AddRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +68,6 @@ public class all_recipes_with_recipes extends AppCompatActivity {
         RecipeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 recipeModel recipeModel = recipeModels.get(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle(recipeModel.getRecipe_Name());
@@ -71,7 +79,6 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                         recipeDbHandler.deleteRecipes(recipeModel.getId());
                         Toast.makeText(all_recipes_with_recipes.this, "Deleted the Recipe", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(context, all_recipes_with_recipes.class));
-
                     }
                 });
 
@@ -82,7 +89,6 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                         Intent intent = new Intent(context, update_recipe.class);
                         intent.putExtra("id", String.valueOf(recipeModel.getId()));
                         startActivity(intent);
-
                     }
                 });
 
@@ -93,7 +99,6 @@ public class all_recipes_with_recipes extends AppCompatActivity {
                         Intent intent = new Intent(context, recipe.class);
                         intent.putExtra("id", String.valueOf(recipeModel.getId()));
                         startActivity(intent);
-
                     }
                 });
 
