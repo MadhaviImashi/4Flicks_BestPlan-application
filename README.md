@@ -23,3 +23,5 @@ Software development kit( SDK) was used to develop this application in Android s
 control system was used to integrate the project.
 ## Database
 For the Data handling section SQLite database was used
+
+app interfaces: https://www.behance.net/gallery/125409683/BestPlan_For-a-healthy-simple-productive-lifestyle 
